@@ -13,9 +13,21 @@ git clone https://github.com/rduffy190/ctrlx-drive-eng-skill.git ~/.claude/skill
 
 ## Requirements
 
-- **DriveTool**, the .NET 10 CLI the skill drives. It is **not** in this repo. `scripts/drivetool` expects it
-  at `~/Dev/EalDotNet/src/DriveTool`; set `DRIVETOOL_PROJECT` to use another path.
+- The **Easy Automation Library (EAL) SDK** from Bosch Rexroth, installed locally (the DLLs are not in this
+  repo). DriveTool builds against its netstandard2.0 `EAL.dll` and `SiP.dll`. The default SDK root is
+  `/usr/local/eal_sdk/02VRS`; elsewhere, set `export EAL_SDK=<folder holding eal4DotNetStandard20>`. The build
+  stops with a clear message if the DLLs aren't found. The SDK's `doc/html` and `samples` are the API reference
+  the skill uses when extending DriveTool.
 - .NET 10 SDK, Python 3, poppler-utils (`pdftotext`) and mupdf-tools (`mutool`).
+
+## First run
+
+```bash
+T=~/.claude/skills/ctrlx-drive-eng/scripts/drivetool
+$T ping --ip <drive-ip>      # first call builds DriveTool into drivetool/bin (a few seconds)
+```
+
+Output files (backups, scope captures) go to `output/` under the current directory.
 
 ## Manuals (not included)
 
@@ -36,7 +48,8 @@ python3 -I scripts/pdf_to_md.py "<modular drive systems>.pdf" manuals/modular-dr
 | Path | What |
 |---|---|
 | `SKILL.md` | Skill instructions: commands, safety rules (plan → confirm → `--yes`), workflows |
-| `scripts/drivetool` | Wrapper that builds and runs DriveTool |
+| `drivetool/` | DriveTool source: the EAL-based CLI (commands in `Commands/`, .par handling in `Par/`) |
+| `scripts/drivetool` | Wrapper that builds DriveTool on first use or after source changes, then runs it |
 | `scripts/scope_report.py` | Scope trace analysis (stats, CSV, PNG) |
 | `scripts/pdf_to_md.py` | Rexroth PDF → Markdown converter |
 | `references/` | Lessons learned, EAL behaviour on ctrlX DRIVE, .par format, IDN index, test-drive setup |

@@ -1,0 +1,24 @@
+{
+  // Up to 8 IDNs; list what the drive can record with: drivetool scope signals
+  "signals": [
+    "S-0-0040",
+    "S-0-0051"
+  ],
+  "time_resolution_us": 500,
+  "memory_size": 4096,
+  "pre_trigger_percent": 20,
+  "trigger": {
+    // manual | signal | auto
+    "type": "manual",
+    // manual: ms after arming to raise the trigger; -1 = wait for Enter;
+    // omit/null = wait until the pre-trigger buffer is full
+    "manual_delay_ms": null,
+    // signal trigger only:
+    "signal": "S-0-0040",
+    "value": "100",
+    "edge": "rising",
+    "mask": 0
+  },
+  "measurement_timeout_ms": 60000,
+  "output_directory": "output"
+}

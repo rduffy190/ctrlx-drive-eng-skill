@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Run the DriveTool CLI (EAL-based ctrlX DRIVE tool). Rebuilds when sources are newer than the binary.
-# Project location: $DRIVETOOL_PROJECT (default: the EalDotNet repo's src/DriveTool).
+# Project location: $DRIVETOOL_PROJECT (default: drivetool/ in this skill).
 set -euo pipefail
-PROJECT="${DRIVETOOL_PROJECT:-$HOME/Dev/EalDotNet/src/DriveTool}"
+PROJECT="${DRIVETOOL_PROJECT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../drivetool" && pwd)}"
 DLL="$PROJECT/bin/Debug/net10.0/drivetool.dll"
 if [[ ! -d "$PROJECT" ]]; then
   echo "DriveTool project not found at $PROJECT (set DRIVETOOL_PROJECT)" >&2

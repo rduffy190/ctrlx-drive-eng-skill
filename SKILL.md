@@ -1,11 +1,11 @@
 ---
 name: ctrlx-drive-eng
-description: Engineer Bosch Rexroth ctrlX DRIVE servo drives over Ethernet with the Easy Automation Library (EAL), using the DriveTool CLI in the EalDotNet repo and extending it with new tools. Use it to check status and diagnostics, read or write drive parameters (SERCOS IDNs like S-0-0040), set up an axis (scaling and units, gear ratio, feed/pitch, travel and position limits, velocity/accel/jerk/torque limits), home or set absolute position, run drive commands, back up, diff or restore .par files, record and analyse scope traces, and update .ibf firmware. Includes the Rexroth parameter reference and function/hardware manuals as greppable Markdown. Use it whenever the user mentions a ctrlX DRIVE, servo drive, IDNs, scaling, homing, limits, drive errors (F-codes), scope traces, .par/.ibf files, PM/CM/OM modes, or wants a new drive tool on EAL, even if they don't name EAL.
+description: Engineer Bosch Rexroth ctrlX DRIVE servo drives over Ethernet with the Easy Automation Library (EAL), using the DriveTool CLI that ships with this skill and extending it with new tools. Use it to check status and diagnostics, read or write drive parameters (SERCOS IDNs like S-0-0040), set up an axis (scaling and units, gear ratio, feed/pitch, travel and position limits, velocity/accel/jerk/torque limits), home or set absolute position, run drive commands, back up, diff or restore .par files, record and analyse scope traces, and update .ibf firmware. Includes the Rexroth parameter reference and function/hardware manuals as greppable Markdown. Use it whenever the user mentions a ctrlX DRIVE, servo drive, IDNs, scaling, homing, limits, drive errors (F-codes), scope traces, .par/.ibf files, PM/CM/OM modes, or wants a new drive tool on EAL, even if they don't name EAL.
 ---
 
 # ctrlX DRIVE engineering with EAL
 
-The tooling is **DriveTool**, a .NET 10 CLI on EAL in `~/Dev/EalDotNet/src/DriveTool`. It talks to the drive
+The tooling is **DriveTool**, a .NET 10 CLI on EAL in this skill's `drivetool/` folder. It talks to the drive
 directly (SiP over Ethernet), not through a ctrlX CORE. For the CORE's Data Layer, use the `ctrlx-rest` skill.
 
 ```bash
@@ -112,7 +112,7 @@ lowering it. Verify through P-0-0444 (effective).
 Don't restore `--selection all` files. They carry live values (position command S-0-0047, system time), and
 restore refuses them for that reason.
 
-**Scope capture:** copy `src/DriveTool/scopeConfig.json`, then set `signals` (≤8, check with
+**Scope capture:** copy `drivetool/scopeConfig.json`, then set `signals` (≤8, check with
 `scope signals`), `time_resolution_us`, `memory_size` and `pre_trigger_percent`. Trigger `manual` (default:
 fires once the pre-trigger buffer is full), `signal` (signal/value/edge; not yet hardware-verified) or `auto`.
 `scope run` plans, then `--yes` runs it. Analyse with:
@@ -135,8 +135,8 @@ transfers reboot the drive, so take a parameter `backup` before `set`.
 
 Add a command to DriveTool rather than writing one-off programs:
 
-1. Look up the EAL API in `~/Dev/EalDotNet/libDocs/eal` / `libExamples/eal` (the repo's `library-reference`
-   skill). **Never invent EAL names.** Some documented calls throw `NotImplementedException` on ctrlX DRIVE;
+1. Look up the EAL API in the EAL SDK: `$EAL_SDK/eal4DotNetStandard20/doc/html` (API reference) and
+   `$EAL_SDK/eal4DotNetStandard20/samples` (default `EAL_SDK=/usr/local/eal_sdk/02VRS`). **Never invent EAL names.** Some documented calls throw `NotImplementedException` on ctrlX DRIVE;
    check [references/eal-on-ctrlx-drive.md](references/eal-on-ctrlx-drive.md) first, and probe new calls
    read-only in a try/catch.
 2. More than one parameter → bulk only: `Drive.ReadBlocks` (SaveParameters to a stream) and `Drive.LoadBlocks`

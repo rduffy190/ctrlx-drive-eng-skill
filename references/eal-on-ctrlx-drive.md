@@ -1,7 +1,7 @@
 # EAL on ctrlX DRIVE: verified behaviour
 
-Observed with EAL 02VRS (netstandard2.0 build, `/usr/local/eal_sdk/02VRS/eal4DotNetStandard20/bin`) against a
-ctrlX DRIVE XCS2 running FWA-XD1-AXS-V-0610N-NN-00, 2026-10-12. Library API docs: `<repo>/libDocs/eal/`
+Observed with EAL 02VRS (netstandard2.0 build, `$EAL_SDK/eal4DotNetStandard20/bin`) against a
+ctrlX DRIVE XCS2 running FWA-XD1-AXS-V-0610N-NN-00, 2026-10-12. Library API docs: `$EAL_SDK/eal4DotNetStandard20/doc/html/`
 (use the repo's `library-reference` skill to look things up).
 
 ## Calls that throw `NotImplementedException` on ctrlX DRIVE

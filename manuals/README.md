@@ -1,6 +1,6 @@
 # ctrlX DRIVE manuals (Markdown)
 
-Generated from the Bosch Rexroth PDFs in `~/Dev/EalDotNet/` by `../scripts/pdf_to_md.py` (2026-10-12).
+Generated from the Bosch Rexroth PDFs (download them from Bosch Rexroth) by `../scripts/pdf_to_md.py` (2026-10-12).
 The text comes from `pdftotext -layout`, so tables keep their column alignment. Figures are **not** included:
 `<!-- p.N -->` marks each PDF page, and `*PDF p. N*` follows each heading. To see a figure, render the page and
 read the PNG: `mutool draw -o /tmp/p.png -r 110 "<pdf>" N`.

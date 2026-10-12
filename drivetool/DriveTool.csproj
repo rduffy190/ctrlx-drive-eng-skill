@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>drivetool</AssemblyName>
+    <RootNamespace>DriveTool</RootNamespace>
+    <!-- EAL SDK root (the folder holding eal4DotNetStandard20). Set the EAL_SDK environment variable or pass
+         -p:EalSdkDir=...; -p:EalBinDir=... points straight at the folder holding EAL.dll / SiP.dll. -->
+    <EalSdkDir Condition="'$(EalSdkDir)' == ''">$(EAL_SDK)</EalSdkDir>
+    <EalSdkDir Condition="'$(EalSdkDir)' == ''">/usr/local/eal_sdk/02VRS</EalSdkDir>
+    <EalBinDir Condition="'$(EalBinDir)' == ''">$(EalSdkDir)/eal4DotNetStandard20/bin</EalBinDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="EAL">
+      <HintPath>$(EalBinDir)/EAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SiP">
+      <HintPath>$(EalBinDir)/SiP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="scopeConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="CheckEalSdk" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(EalBinDir)/EAL.dll')"
+           Text="EAL.dll not found in $(EalBinDir). Install the Easy Automation Library SDK and set EAL_SDK to its root (the folder holding eal4DotNetStandard20)." />
+  </Target>
+
+</Project>

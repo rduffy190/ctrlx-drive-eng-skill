@@ -4,3 +4,5 @@ manuals/*
 !manuals/README.md
 __pycache__/
 references/test-drive.md
+drivetool/bin/
+drivetool/obj/

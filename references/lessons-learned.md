@@ -77,7 +77,7 @@ step fails. All entries are from the XCS2 test drive (FWA-XD1-AXS-V-0610N) on 20
 ### Scope capture short / time axis shifted
 - A manual trigger right after arming recorded 3320 instead of 4096 samples: the pre-trigger buffer wasn't
   full. Fixes: wait about the pre-trigger time before `RaiseTrigger` (the default now), and compute pre-trigger
-  samples as `total - P-0-0033`. src/OscopeTest still has the old bug.
+  samples as `total - P-0-0033`.
 
 ### EAL calls that just throw on ctrlX DRIVE
 - `GetCurrentMode`, `GetTemperature`, `GetCpuLoad`, `GetHardwareDetails`, the diagnosis index/log calls,

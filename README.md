@@ -13,28 +13,23 @@ git clone https://github.com/rduffy190/ctrlx-drive-eng-skill.git ~/.claude/skill
 
 ## Requirements
 
-- The **Easy Automation Library (EAL) SDK** from Bosch Rexroth, installed locally (the DLLs are not in this
-  repo). DriveTool builds against its netstandard2.0 `EAL.dll` and `SiP.dll`. The default SDK root is
-  `/usr/local/eal_sdk/02VRS`; elsewhere, set `export EAL_SDK=<folder holding eal4DotNetStandard20>`. The build
-  stops with a clear message if the DLLs aren't found. The SDK's `doc/html` and `samples` are the API reference
-  the skill uses when extending DriveTool.
-- .NET 10 SDK (`dotnet --list-sdks` should show 10.x).
-- Python 3 for the scripts. `scope_report.py --png` also needs matplotlib.
-- poppler-utils (`pdftotext`) and mupdf-tools (`mutool`), only for converting the manuals.
+- **EAL SDK:** install Bosch Rexroth's `ealsdk` Debian package (tested with 2.6.0.0). It puts `EAL.dll` and
+  `SiP.dll` in `/usr/local/eal_sdk/02VRS`, where DriveTool looks for them. The DLLs are not in this repo.
+- **.NET 10 SDK** (`dotnet --list-sdks` should show 10.x).
+- **Python 3** for the scripts. `scope_report.py --png` also needs matplotlib.
+- **poppler-utils** (`pdftotext`) and **mupdf-tools** (`mutool`), only for converting the manuals.
 
 ## Build
 
-The wrapper builds DriveTool automatically on first use and again whenever a source file changes, so you
-normally don't need to build by hand. To build or check it yourself:
+Install the SDK package, then build DriveTool:
 
 ```bash
-cd ~/.claude/skills/ctrlx-drive-eng/drivetool
-export EAL_SDK=/usr/local/eal_sdk/02VRS     # only if the SDK isn't at this default location
-dotnet build                                # output: drivetool/bin/Debug/net10.0/drivetool.dll
+sudo apt install ./ealsdk_*.deb
+dotnet build ~/.claude/skills/ctrlx-drive-eng/drivetool
 ```
 
-Instead of `EAL_SDK` you can pass `-p:EalSdkDir=<sdk root>`, or `-p:EalBinDir=<folder with EAL.dll>`.
-If the build says `EAL.dll not found in …`, the SDK path is wrong.
+If the build stops with `EAL.dll not found in …`, the `ealsdk` package isn't installed. After source changes,
+`scripts/drivetool` rebuilds DriveTool by itself before running it.
 
 ## Run
 
@@ -48,8 +43,6 @@ $T status
 
 Every command prints JSON on stdout. Commands that write to the drive only print a plan unless `--yes` is
 given (see SKILL.md). Output files (backups, scope captures) go to `output/` under the current directory.
-
-Set `DRIVETOOL_PROJECT=<folder>` to make the wrapper use a DriveTool checkout somewhere else.
 
 ## Manuals (not included)
 

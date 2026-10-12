@@ -1,0 +1,1285 @@
+# IDN index read from the ctrlX DRIVE test unit on 2026-10-12, after linear mm scaling: FWA-XD1-AXS-V-0610N-NN-00 | XCS2-W0007FBN-01NETT0NNNN-S0610N2NNNN0NN | MS2S02-A0BYN-IMHG0-NNDNN-NN | FUS2-01ET-T0NNNN
+# Columns: idn, writable_in (always | pm_or_cm = not in OM; manual Class says PM vs CM | never), type ([] = list, cmd = command), unit, name. grep it; do not read it whole.
+S-0-0000.0.0	always	Hex		Parameter interface configuration: Dummy
+S-0-0001.0.0	pm_or_cm	UnsignedDecimal	µs	Application synchronization: NC cycle time
+S-0-0002.0.0	pm_or_cm	UnsignedDecimal	µs	SoE protocol: Sercos cycle time (TScyc)
+S-0-0005.0.0	never	UnsignedDecimal	µs	SoE protocol: Minimum feedback acquisition time (T4min)
+S-0-0011.0.0	never	Binary		Class 1 diagnostics: Value
+S-0-0012.0.0	never	Binary		Class 2 diagnostics: Value
+S-0-0013.0.0	never	Binary		Class 3 diagnostics: Value
+S-0-0014.0.0	never	Binary		MCI diagnostics: Interface status
+S-0-0015.0.0	pm_or_cm	Binary		SoE protocol: Telegram type parameter
+S-0-0016.0.0	pm_or_cm	Idn[]		SoE protocol: Configuration list of AT
+S-0-0017.0.0	never	Idn[]		IDN list generic: All operation data
+S-0-0018.0.0	never	Idn[]		IDN list generic: Operation data for CP2
+S-0-0019.0.0	never	Idn[]		IDN list generic: Operation data for CP3
+S-0-0021.0.0	never	Idn[]		MCI state machine: Invalid data Safe-Op transition
+S-0-0022.0.0	never	Idn[]		MCI state machine: Invalid data Op transition
+S-0-0024.0.0	pm_or_cm	Idn[]		SoE protocol: Configuration list of MDT
+S-0-0025.0.0	never	Idn[]		IDN list generic: All procedure commands
+S-0-0025.0.136	never	Idn[]		IDN list generic: Cmds independent of master commun. return
+S-0-0026.0.0	always	Idn[]		Signal status word: Configuration list
+S-0-0027.0.0	always	Idn[]		Signal control word: Configuration list
+S-0-0029.0.0	never	UnsignedDecimal		SoE protocol: MDT error counter
+S-0-0032.0.0	pm_or_cm	Binary		Axis operation modes: Primary operation mode
+S-0-0033.0.0	pm_or_cm	Binary		Axis operation modes: Secondary operation mode 1
+S-0-0034.0.0	pm_or_cm	Binary		Axis operation modes: Secondary operation mode 2
+S-0-0035.0.0	pm_or_cm	Binary		Axis operation modes: Secondary operation mode 3
+S-0-0036.0.0	always	SignedDecimal	mm/s	Target velocity
+S-0-0037.0.0	always	SignedDecimal	mm/s	Velocity command value adjustment: Velocity offset
+S-0-0038.0.0	always	SignedDecimal	mm/s	Velocity limitation: Limit value, positive
+S-0-0039.0.0	always	SignedDecimal	mm/s	Velocity limitation: Limit value, negative
+S-0-0040.0.0	never	SignedDecimal	mm/s	Encoder actual values ENC_1: Velocity sensor actual value
+S-0-0041.0.0	always	UnsignedDecimal	mm/s	Homing speeds: Speed during search for switch
+S-0-0042.0.0	always	UnsignedDecimal	mm/s² 	Homing acceleration
+S-0-0043.0.0	pm_or_cm	Binary		Axis polarity: Velocity
+S-0-0044.0.0	pm_or_cm	Binary		Velocity data scaling: Type
+S-0-0045.0.0	pm_or_cm	UnsignedDecimal		Velocity data scaling: Factor
+S-0-0046.0.0	pm_or_cm	SignedDecimal		Velocity data scaling: Exponent
+S-0-0047.0.0	always	SignedDecimal	mm	Cyclic position control: Command value
+S-0-0049.0.0	always	SignedDecimal	mm	Travel range limitation: Limit value, positive
+S-0-0050.0.0	always	SignedDecimal	mm	Travel range limitation: Limit value, negative
+S-0-0051.0.0	never	SignedDecimal	mm	Encoder actual values ENC_1: Position
+S-0-0052.0.0	always	SignedDecimal	mm	Homing configuration ENC_1: Home offset
+S-0-0053.0.0	never	SignedDecimal	mm	Encoder actual values ENC_2: Position
+S-0-0054.0.0	always	SignedDecimal	mm	Homing configuration ENC_2: Home offset
+S-0-0055.0.0	pm_or_cm	Binary		Axis polarity: Position
+S-0-0057.0.0	always	UnsignedDecimal	mm	Position status: Position window
+S-0-0076.0.0	pm_or_cm	Binary		Position data scaling: Type
+S-0-0077.0.0	pm_or_cm	UnsignedDecimal		Position data scaling: Factor
+S-0-0078.0.0	pm_or_cm	SignedDecimal		Position data scaling: Exponent
+S-0-0079.0.0	pm_or_cm	UnsignedDecimal		Position data scaling: Rotational resolution
+S-0-0080.0.0	always	SignedDecimal	%	Torque/force control: Target torque
+S-0-0081.0.0	always	SignedDecimal	%	Torque/force feed forward: Torque offset
+S-0-0082.0.0	always	SignedDecimal	%	Torque/force limitation: Limit value, positive
+S-0-0083.0.0	always	SignedDecimal	%	Torque/force limitation: Limit value, negative
+S-0-0084.0.0	never	SignedDecimal	%	Torque/Force: Torque actual value
+S-0-0085.0.0	pm_or_cm	Binary		Axis polarity: Torque/force
+S-0-0086.0.0	pm_or_cm	Binary		Torque/force data scaling: Type
+S-0-0091.0.0	always	UnsignedDecimal	mm/s	Velocity limitation: Max profile velocity
+S-0-0092.0.0	always	UnsignedDecimal	%	Torque/force limitation: Limit value, bipolar
+S-0-0093.0.0	pm_or_cm	UnsignedDecimal		Torque/force data scaling: Factor
+S-0-0094.0.0	pm_or_cm	SignedDecimal		Torque/force data scaling: Exponent
+S-0-0095.0.0	never	Text		Diagnostic message: Text
+S-0-0097.0.0	always	Binary		Class 2 diagnostics: Mask
+S-0-0098.0.0	always	Binary		Class 3 diagnostics: Mask
+S-0-0099.0.0	always	Binary cmd		Class 1 diagnostics: C0500 Reset command
+S-0-0100.0.0	always	UnsignedDecimal	Nm/(rad/s)	Velocity controller: Proportional gain
+S-0-0101.0.0	always	UnsignedDecimal	ms	Velocity controller: Integral action time
+S-0-0103.0.0	pm_or_cm	UnsignedDecimal	mm	Maximum travel range: Modulo format
+S-0-0104.0.0	always	UnsignedDecimal	1000/min	Position controller: Proportional gain
+S-0-0106.0.0	always	UnsignedDecimal	V/A	Motor current control: Proportional gain 1
+S-0-0107.0.0	always	UnsignedDecimal	ms	Motor current control: Integral action time 1
+S-0-0108.0.0	always	UnsignedDecimal	%	Feedrate override: Value
+S-0-0109.0.0	pm_or_cm	UnsignedDecimal	A	Motor basic data: Peak current
+S-0-0110.0.0	never	UnsignedDecimal	A	Inverter type data: Peak current
+S-0-0111.0.0	pm_or_cm	UnsignedDecimal	A	Motor basic data: Motor rated current
+S-0-0112.0.0	never	UnsignedDecimal	A	Inverter type data: Nominal current
+S-0-0113.0.0	pm_or_cm	UnsignedDecimal	Rev/min	Motor basic data: Max. motor speed
+S-0-0115.0.0	pm_or_cm	Binary		Encoder function and properties ENC_2: Value
+S-0-0121.0.0	pm_or_cm	UnsignedDecimal	Rev	Gear ratio: Motor shaft revolutions
+S-0-0122.0.0	pm_or_cm	UnsignedDecimal	Rev	Gear ratio: Driving shaft revolutions
+S-0-0123.0.0	pm_or_cm	UnsignedDecimal	mm/Rev	Feed constant: Value
+S-0-0124.0.0	always	UnsignedDecimal	mm/s	Velocity status: Standstill window
+S-0-0125.0.0	always	UnsignedDecimal	mm/s	Velocity status: Threshold value
+S-0-0126.0.0	always	UnsignedDecimal	%	Torque/force status: Threshold value
+S-0-0127.0.0	always	Binary cmd		MCI state machine: C0100 Safe-Op transition check
+S-0-0128.0.0	always	Binary cmd		MCI state machine: C5200 Op transition check
+S-0-0130.0.0	never	SignedDecimal		Touch probe 1, positive edge
+S-0-0131.0.0	never	SignedDecimal		Touch probe 1, negative edge
+S-0-0132.0.0	never	SignedDecimal		Touch probe 2, positive edge
+S-0-0133.0.0	never	SignedDecimal		Touch probe 2, negative edge
+S-0-0134.0.0	never	Binary		Servodrive profile: Control word
+S-0-0135.0.0	never	Binary		Servodrive profile: Status word
+S-0-0138.0.0	pm_or_cm	UnsignedDecimal	mm/s² 	Acceleration limitation: Bipolar profile limit value
+S-0-0139.0.0	always	Binary cmd		Parking axis: C1600 Enable procedure command
+S-0-0139.0.150	always	Binary cmd		Parking axis: C1700 Disable procedure command
+S-0-0139.0.151	never	Idn[]		Parking axis: List of invalid parameters
+S-0-0139.0.152	never	Binary		Parking axis: Initialization status
+S-0-0139.0.153	pm_or_cm	Binary		Parking axis: Permanent configuration
+S-0-0141.0.0	always	Text		Motor identification: Type
+S-0-0144.0.0	never	Binary		Signal status word: Value
+S-0-0145.0.0	always	Binary		Signal control word: Value
+S-0-0146.0.0	always	Binary cmd		NC-contr. homing: C4300 Command procedure
+S-0-0147.0.0	always	Binary		Homing function: Configuration
+S-0-0148.0.0	always	Binary cmd		Homing control: C0600 Command drive-controlled procedure
+S-0-0149.0.0	always	Binary cmd		Fixed stop: C1300 Command
+S-0-0150.0.0	always	SignedDecimal	mm	Homing configuration ENC_1: Reference offset
+S-0-0151.0.0	always	SignedDecimal	mm	Homing configuration ENC_2: Reference offset
+S-0-0156.0.0	never	SignedDecimal	mm/s	Encoder actual values ENC_2: Velocity
+S-0-0157.0.0	always	UnsignedDecimal	mm/s	Velocity status: Static window
+S-0-0158.0.0	always	UnsignedDecimal	W	Inverter DC bus: Power threshold value
+S-0-0159.0.0	always	UnsignedDecimal	mm	Position controller, monitor: Following error window
+S-0-0160.0.0	pm_or_cm	Binary		Acceleration data scaling: Type
+S-0-0161.0.0	pm_or_cm	UnsignedDecimal		Acceleration data scaling: Factor
+S-0-0162.0.0	pm_or_cm	SignedDecimal		Acceleration data scaling: Exponent
+S-0-0163.0.0	always	SignedDecimal	%	Velocity controller: Counterbalance value
+S-0-0164.0.0	never	SignedDecimal	mm/s² 	Encoder actual values ENC_1: Acceleration
+S-0-0169.0.0	always	Binary		Touch probe control: Control word
+S-0-0170.0.0	always	Binary cmd		Touch probe control: Procedure command
+S-0-0171.0.0	always	Binary cmd		NC-contr. homing: C4400 Command calculate displacement
+S-0-0172.0.0	always	Binary cmd		NC-contr. homing: C4500 Command displacement to ref. system
+S-0-0173.0.0	never	SignedDecimal	mm	Marker position function: Value A
+S-0-0174.0.0	never	SignedDecimal	mm	Marker position function: Value B
+S-0-0175.0.0	always	SignedDecimal	mm	Homing active data ENC_1: Shift value
+S-0-0176.0.0	always	SignedDecimal	mm	Homing active data ENC_2: Shift value
+S-0-0177.0.0	always	SignedDecimal	mm	Set absolute position configuration ENC_1: Offset
+S-0-0178.0.0	always	SignedDecimal	mm	Set absolute position configuration ENC_2: Offset
+S-0-0179.0.0	never	Binary		Touch probe control: Status word
+S-0-0185.0.0	never	UnsignedDecimal	Byte	SoE protocol: Max. length of data record in the AT
+S-0-0186.0.0	never	UnsignedDecimal	Byte	SoE protocol: Max. length of data record in the MDT
+S-0-0187.0.0	never	Idn[]		MCI connection type 1: List of configurable data
+S-0-0188.0.0	never	Idn[]		MCI connection type 2: List of configurable data
+S-0-0189.0.0	never	SignedDecimal	mm	Position controller: Following error actual value
+S-0-0191.0.0	always	Binary cmd		Homing function: C1500 Command cancel reference point
+S-0-0192.0.0	never	Idn[]		Application data: IDN list
+S-0-0193.0.0	always	SignedDecimal	mm/s³ 	Positioning profile: Jerk
+S-0-0195.0.0	never	SignedDecimal	mm/s² 	Encoder actual values ENC_2: Acceleration
+S-0-0201.0.0	pm_or_cm	SignedDecimal	°C	Motor temperature monitoring: Warning threshold
+S-0-0204.0.0	pm_or_cm	SignedDecimal	°C	Motor temperature monitoring: Shutdown threshold
+S-0-0206.0.0	pm_or_cm	UnsignedDecimal	ms	Axis delay time: On
+S-0-0207.0.0	pm_or_cm	UnsignedDecimal	ms	Axis delay time: Off
+S-0-0208.0.0	pm_or_cm	Binary		Temperature data scaling: Type
+S-0-0240.0.0	always	Binary		DC bus supply: Control word
+S-0-0258.0.0	always	SignedDecimal	mm	Drive-internal interpolation: Target position
+S-0-0259.0.0	always	UnsignedDecimal	mm/s	Positioning profile: Profile velocity
+S-0-0260.0.0	always	SignedDecimal	mm/s² 	Positioning profile: Acceleration
+S-0-0261.0.0	always	SignedDecimal	mm	Position status: Coarse window
+S-0-0262.0.0	always	Binary cmd		Application data default: C07_x Procedure command
+S-0-0263.0.0	pm_or_cm	Binary cmd		Application data: C2300 Load procedure command
+S-0-0264.0.0	always	Binary cmd		Application data: C2200 Backup procedure command
+S-0-0265.0.0	always	UnsignedDecimal		Diagnostic message: Language selection
+S-0-0267.0.0	always	Text		Password: Value
+S-0-0269.0.0	always	Binary		Application data: Storage mode
+S-0-0270.0.0	always	Idn[]		Application data: IDN list of selected backup data
+S-0-0272.0.0	always	UnsignedDecimal	%	Velocity status: Percentage window
+S-0-0273.0.0	pm_or_cm	UnsignedDecimal	ms	Axis shutdown: Maximum drive off delay time
+S-0-0277.0.0	pm_or_cm	Binary		Encoder function and properties ENC_1: Value
+S-0-0278.0.0	pm_or_cm	SignedDecimal	mm	Maximum travel range: Absolute format
+S-0-0282.0.0	always	SignedDecimal	mm	Drive-controlled positioning: Command value
+S-0-0284.0.0	pm_or_cm	Binary		Axis operation modes: Secondary operation mode 4
+S-0-0285.0.0	pm_or_cm	Binary		Axis operation modes: Secondary operation mode 5
+S-0-0286.0.0	pm_or_cm	Binary		Axis operation modes: Secondary operation mode 6
+S-0-0287.0.0	pm_or_cm	Binary		Axis operation modes: Secondary operation mode 7
+S-0-0292.0.0	never	Hex[]		Axis operation modes: List of supported operation modes
+S-0-0293.0.0	always	Binary cmd		Application data: C2400 Selectively backup working memory
+S-0-0298.0.0	never	SignedDecimal	mm	Home switch: Proposed mechanical shift
+S-0-0299.0.0	always	SignedDecimal	mm	Home switch: Virtual shift
+S-0-0301.0.0	always	Idn		SoE protocol: Allocation of real-time control bit 1
+S-0-0303.0.0	always	Idn		SoE protocol: Allocation of real-time control bit 2
+S-0-0305.0.0	always	Idn		SoE protocol: Allocation of real-time status bit 1
+S-0-0307.0.0	always	Idn		SoE protocol: Allocation of real-time status bit 2
+S-0-0315.0.0	never	Binary		Positioning status: Velocity > velocity limit
+S-0-0323.0.0	never	Binary		Positioning status: Target position outside of travel range
+S-0-0326.0.0	never	UnsignedDecimal		Application data: Parameter checksum
+S-0-0327.0.0	always	Idn[]		Application data: IDN list of checksum parameters
+S-0-0328.0.0	always	UnsignedDecimal[]		Signal status word: Assign list signal
+S-0-0329.0.0	always	UnsignedDecimal[]		Signal control word: Assign list signal
+S-0-0330.0.0	never	Binary		Velocity status: Actual value = command value
+S-0-0331.0.0	never	Binary		Velocity status: Actual value = 0
+S-0-0332.0.0	never	Binary		Velocity status: Actual value < threshold value
+S-0-0333.0.0	never	Binary		Torque/force status: Actual value >= threshold value
+S-0-0334.0.0	never	Binary		Torque/force status: Actual value >= limit value
+S-0-0335.0.0	never	Binary		Velocity status: Command value > limit value
+S-0-0336.0.0	never	Binary		Position status: In position
+S-0-0337.0.0	never	Binary		Inverter DC bus: Power threshold status
+S-0-0338.0.0	never	Binary		Positioning status: In target position
+S-0-0341.0.0	never	Binary		Position status: In coarse position
+S-0-0342.0.0	never	Binary		Positioning status: Target position attained
+S-0-0343.0.0	never	Binary		Positioning status: Interpolator halted
+S-0-0346.0.0	always	Binary		Drive-controlled positioning: Control word
+S-0-0347.0.0	never	SignedDecimal	mm/s	Velocity controller: Deviation
+S-0-0348.0.0	always	UnsignedDecimal	mNm/(rad/s²)	Acceleration feedforward: Gain position control loop
+S-0-0349.0.0	always	UnsignedDecimal	mm/s³ 	Jerk limitation: Value
+S-0-0359.0.0	always	SignedDecimal	mm/s² 	Positioning profile: Deceleration
+S-0-0360.0.0	never	Hex		MUX command 1: Value
+S-0-0362.0.0	always	Hex		MUX control: List index command values
+S-0-0364.0.0	never	Hex		MUX feedback 1: Value
+S-0-0366.0.0	always	Hex		MUX control: List index feedback values
+S-0-0368.0.0	always	Hex		MUX control: Addressing
+S-0-0370.0.0	pm_or_cm	Idn[]		MUX command 1: Configuration list
+S-0-0371.0.0	pm_or_cm	Idn[]		MUX feedback 1: Configuration list
+S-0-0372.0.0	always	SignedDecimal	mm/s² 	Drive Halt: Quick stop deceleration signed
+S-0-0378.0.0	never	UnsignedDecimal	mm	Absolute encoder range ENC_1: Value
+S-0-0379.0.0	never	UnsignedDecimal	mm	Absolute encoder range ENC_2: Value
+S-0-0380.0.0	never	SignedDecimal	V	Inverter DC bus: Voltage, actual value
+S-0-0381.0.0	always	SignedDecimal	A	Inverter DC bus: Current, actual value
+S-0-0382.0.0	never	SignedDecimal	W	Inverter DC bus: Power, actual value
+S-0-0383.0.0	never	SignedDecimal	°C	Motor temperature sensor: Actual value
+S-0-0384.0.0	never	SignedDecimal	°C	Device temperature: Heat sink
+S-0-0385.0.0	never	SignedDecimal	W	Motor control, actual values: Mechanical power
+S-0-0386.0.0	never	SignedDecimal	mm	Position controller: Position actual value
+S-0-0390.0.0	never	Hex		Diagnostic message: Number
+S-0-0390.0.136	never	Hex		Diagnostic message: Detailed number
+S-0-0391.0.0	always	UnsignedDecimal	mm	Position difference monitor enc.1 - enc.2: Window
+S-0-0393.0.0	always	Binary		Positioning profile: Command value mode
+S-0-0398.0.0	never	Idn[]		Signal status word: IDN-list of configurable data
+S-0-0399.0.0	never	Idn[]		Signal control word: IDN-list of configurable data
+S-0-0400.0.0	always	Binary		Home switch: Status
+S-0-0401.0.0	never	Binary		Touch probe input 1: Switching state
+S-0-0402.0.0	never	Binary		Touch probe input 2: Switching state
+S-0-0403.0.0	never	Binary		Homing status: Feedback value status
+S-0-0404.0.0	always	Binary		Homing status: Command value status
+S-0-0405.0.0	always	Binary		Touch probe control: Enable 1
+S-0-0406.0.0	always	Binary		Touch probe control: Enable 2
+S-0-0407.0.0	always	Binary		NC-contr. homing: Homing enable
+S-0-0408.0.0	never	Binary		NC-contr. homing: Status
+S-0-0409.0.0	never	UnsignedDecimal		Touch probe 1, positive edge counter
+S-0-0410.0.0	never	UnsignedDecimal		Touch probe 1, negative edge counter
+S-0-0411.0.0	never	UnsignedDecimal		Touch probe 2, positive edge counter
+S-0-0412.0.0	never	UnsignedDecimal		Touch probe 2, negative edge counter
+S-0-0413.0.0	always	UnsignedDecimal		SoE protocol: Bit number of real-time control bit 1
+S-0-0414.0.0	always	UnsignedDecimal		SoE protocol: Bit number of real-time control bit 2
+S-0-0415.0.0	always	UnsignedDecimal		SoE protocol: Bit number of real-time status bit 1
+S-0-0416.0.0	always	UnsignedDecimal		SoE protocol: Bit number of real-time status bit 2
+S-0-0417.0.0	always	UnsignedDecimal	mm/s	Positioning profile: Velocity threshold in modulo mode
+S-0-0418.0.0	always	UnsignedDecimal	mm	Positioning profile: Target position window in modulo mode
+S-0-0419.0.0	never	Binary		Drive-controlled positioning: Command acknowledgment
+S-0-0420.0.0	always	Binary cmd		Subdevice STM: C0400 Activate configuration mode
+S-0-0422.0.0	always	Binary cmd		Subdevice STM: C0200 Activate operation mode
+S-0-0423.0.0	never	Idn[]		IDN list generic: Invalid data
+S-0-0423.0.136	never	Idn[]		IDN list generic: Invalid Data Ringbuffer
+S-0-0424.0.0	never	UnsignedDecimal		Subdevice STM: Status, parameterization mode
+S-0-0425.0.0	always	Binary		Subdevice STM: Subdevice state machine, control
+S-0-0426.0.0	always	Idn		Touch probe configuration 1: Signal selection 1
+S-0-0427.0.0	always	Idn		Touch probe configuration 2: Signal selection 2
+S-0-0428.0.0	never	Idn[]		Touch probe function, extended: Signal selection list
+S-0-0429.0.0	always	SignedDecimal	mm/s² 	Axis shutdown: Emergency stop deceleration
+S-0-0430.0.0	pm_or_cm	SignedDecimal	mm	Positioning profile: Effective target position
+S-0-0437.0.0	never	Binary		Positioning status: Word
+S-0-0440.0.0	never	SignedDecimal		Cyclic mark evaluation ENC 1: Position
+S-0-0441.0.0	never	SignedDecimal		Cyclic mark evaluation ENC 2: Position
+S-0-0442.0.0	never	UnsignedDecimal		Cyclic mark evaluation ENC 1: Counter
+S-0-0443.0.0	never	UnsignedDecimal		Cyclic mark evaluation ENC 2: Counter
+S-0-0446.0.0	pm_or_cm	UnsignedDecimal	mm/s	Acceleration data scaling: Ramp reference velocity
+S-0-0447.0.0	always	Binary cmd		Set absolute position function: C0300 Command procedure
+S-0-0448.0.0	always	Binary		Set absolute position function: Control word
+S-0-0450.0.0	never	Hex		MUX command 2: Value
+S-0-0451.0.0	never	Hex		MUX command 3: Value
+S-0-0452.0.0	never	Hex		MUX command 4: Value
+S-0-0453.0.0	never	Hex		MUX command 5: Value
+S-0-0454.0.0	never	Hex		MUX command 6: Value
+S-0-0455.0.0	never	Hex		MUX command 7: Value
+S-0-0456.0.0	never	Hex		MUX command 8: Value
+S-0-0478.0.0	never	Binary		Travel range limitation: Status
+S-0-0480.0.0	never	Hex		MUX feedback 2: Value
+S-0-0481.0.0	never	Hex		MUX feedback 3: Value
+S-0-0482.0.0	never	Hex		MUX feedback 4: Value
+S-0-0483.0.0	never	Hex		MUX feedback 5: Value
+S-0-0484.0.0	never	Hex		MUX feedback 6: Value
+S-0-0485.0.0	never	Hex		MUX feedback 7: Value
+S-0-0486.0.0	never	Hex		MUX feedback 8: Value
+S-0-0490.0.0	pm_or_cm	Idn[]		MUX command 2: Configuration list
+S-0-0491.0.0	pm_or_cm	Idn[]		MUX command 3: Configuration list
+S-0-0492.0.0	pm_or_cm	Idn[]		MUX command 4: Configuration list
+S-0-0493.0.0	pm_or_cm	Idn[]		MUX command 5: Configuration list
+S-0-0494.0.0	pm_or_cm	Idn[]		MUX command 6: Configuration list
+S-0-0495.0.0	pm_or_cm	Idn[]		MUX command 7: Configuration list
+S-0-0496.0.0	pm_or_cm	Idn[]		MUX command 8: Configuration list
+S-0-0500.0.0	pm_or_cm	Idn[]		MUX feedback 2: Configuration list
+S-0-0501.0.0	pm_or_cm	Idn[]		MUX feedback 3: Configuration list
+S-0-0502.0.0	pm_or_cm	Idn[]		MUX feedback 4: Configuration list
+S-0-0503.0.0	pm_or_cm	Idn[]		MUX feedback 5: Configuration list
+S-0-0504.0.0	pm_or_cm	Idn[]		MUX feedback 6: Configuration list
+S-0-0505.0.0	pm_or_cm	Idn[]		MUX feedback 7: Configuration list
+S-0-0506.0.0	pm_or_cm	Idn[]		MUX feedback 8: Configuration list
+S-0-0520.0.0	always	Binary		Axis control: Control word control loop
+S-0-0521.0.0	never	Binary		Axis control: Status word control loop
+S-0-0524.0.0	always	SignedDecimal	µs	Touch probe dead time compensation 1: Positive edge
+S-0-0525.0.0	always	SignedDecimal	µs	Touch probe dead time compensation 1: Negative edge
+S-0-0526.0.0	always	SignedDecimal	µs	Touch probe dead time compensation 2: Positive edge
+S-0-0527.0.0	always	SignedDecimal	µs	Touch probe dead time compensation 2: Negative edge
+S-0-0530.0.0	always	UnsignedDecimal	%	Fixed stop: Torque/force limit value, bipolar
+S-0-0531.0.0	never	Hex		Application data: Checksum
+S-0-0532.0.0	always	Binary		Travel range limitation: Configuration
+S-0-0533.0.0	pm_or_cm	UnsignedDecimal	Nm	Motor basic data: Motor rated torque
+S-0-0533.0.150	pm_or_cm	UnsignedDecimal	Nm	Motor basic data: Cont. torque for max. speed
+S-0-0534.0.0	pm_or_cm	UnsignedDecimal	Nm	Motor basic data: Maximum torque
+S-0-0535.0.0	never	SignedDecimal	mm/s	Velocity controller: Velocity actual value
+S-0-0540.0.0	always	UnsignedDecimal	ms	Velocity status: Velocity window time
+S-0-0541.0.0	always	UnsignedDecimal	ms	Position status: Position window time
+S-0-0542.0.0	always	UnsignedDecimal	mm/s	Homing speeds: Speed during search for zero
+S-0-0561.0.0	always	SignedDecimal	W	Power limitation: Withdrawal from DC bus
+S-0-0562.0.0	always	SignedDecimal	W	Power limitation: Supply to DC bus
+S-0-0563.0.0	always	SignedDecimal	A	DC bus current limitation: Withdrawal value
+S-0-0564.0.0	always	SignedDecimal	A	DC bus current limitation: Feeding value
+S-0-0600.10.1	never	Binary		Encoder basic out ONBOARD: Status
+S-0-0600.10.21	never	UnsignedDecimal	Incr	Encoder basic out ONBOARD: Position, fine
+S-0-0600.10.22	never	UnsignedDecimal	Incr	Encoder basic out ONBOARD: Position, coarse
+S-0-0600.10.23	never	UnsignedDecimal	Incr	Encoder basic out ONBOARD: Marker position, fine
+S-0-0600.10.24	never	UnsignedDecimal	Incr	Encoder basic out ONBOARD: Marker position, coarse
+S-0-0600.10.140	never	Binary		Encoder basic out ONBOARD: Buffer error class 2 (static)
+S-0-0601.10.1	pm_or_cm	Binary		Encoder basic interface ONBOARD: Data out
+S-0-0601.10.12	pm_or_cm	UnsignedDecimal	µs	Encoder basic interface ONBOARD: Refresh time
+S-0-0601.10.21	pm_or_cm	UnsignedDecimal[]	Incr/Rev	Encoder basic interface ONBOARD: Resolution, position
+S-0-0601.10.22	pm_or_cm	UnsignedDecimal[]	Incr	Encoder basic interface ONBOARD: Position overflow threshold
+S-0-0601.10.23	pm_or_cm	UnsignedDecimal[]	Rev	Encoder basic interface ONBOARD: Absolute position range
+S-0-0601.10.24	pm_or_cm	UnsignedDecimal[]		Encoder basic interface ONBOARD: Resolution (analog)
+S-0-0601.10.136	never	Text		Encoder basic interface ONBOARD: Serial number
+S-0-0601.10.158	pm_or_cm	UnsignedDecimal[]		Encoder basic interface ONBOARD: Abs. position range, int.
+S-0-0602.10.1	pm_or_cm	UnsignedDecimal		Phys. encoder configuration ONBOARD: Type
+S-0-0602.10.2	pm_or_cm	Binary		Phys. encoder configuration ONBOARD: Properties
+S-0-0602.10.7	pm_or_cm	Hex		Phys. encoder configuration ONBOARD: Protocol configuration
+S-0-0602.10.8	pm_or_cm	UnsignedDecimal	Rev/min	Phys. encoder configuration ONBOARD: Max. init. speed
+S-0-0602.10.10	never	UnsignedDecimal[]		Phys. encoder configuration ONBOARD: Encoder type sel. list
+S-0-0602.10.21	pm_or_cm	UnsignedDecimal[]	DP/Rev	Phys. encoder configuration ONBOARD: Resolution (analog)
+S-0-0602.10.22	pm_or_cm	UnsignedDecimal[]	Incr/Rev	Phys. encoder configuration ONBOARD: Resolution (digital)
+S-0-0602.10.136	pm_or_cm	Binary		Phys. encoder configuration ONBOARD: Configuration
+S-0-0602.10.137	never	Text		Phys. encoder properties ONBOARD: Software version
+S-0-0602.10.138	never	Text		Phys. encoder properties ONBOARD: Software build date
+S-0-0602.10.139	never	Text		Phys. encoder properties ONBOARD: Name
+S-0-0603.10.5	never	Hex[]		Encoder diagnostic ONBOARD: Diagnostic data
+S-0-0603.10.6	never	Hex[]		Encoder diagnostic ONBOARD: Telegram data
+S-0-0603.10.140	always	UnsignedDecimal	Incr	Virtual encoder ONBOARD: Position, fine
+S-0-0603.10.141	always	UnsignedDecimal	Incr	Virtual encoder ONBOARD: Position, coarse
+S-0-0603.10.142	always	Binary		Virtual encoder ONBOARD: Status
+S-0-0603.10.143	pm_or_cm	UnsignedDecimal		Virtual encoder ONBOARD: Interface
+S-0-0603.10.144	pm_or_cm	Binary		Virtual encoder ONBOARD: Virtual encoder function
+S-0-0610.1.1	never	Binary		Encoder extended in ENC_1: Status
+S-0-0610.1.21	never	UnsignedDecimal	Incr	Encoder extended in ENC_1: Position, 32 bit, fine
+S-0-0610.1.22	never	UnsignedDecimal	Incr	Encoder extended in ENC_1: Position, 32 bit, coarse
+S-0-0610.1.23	never	UnsignedDecimal	Incr	Encoder extended in ENC_1: Marker position, 32 bit, fine
+S-0-0610.1.24	never	UnsignedDecimal	Incr	Encoder extended in ENC_1: Marker position, 32 bit, coarse
+S-0-0610.2.1	never	Binary		Encoder extended in ENC_2: Status
+S-0-0610.2.21	never	UnsignedDecimal	Incr	Encoder extended in ENC_2: Position, 32 bit, fine
+S-0-0610.2.22	never	UnsignedDecimal	Incr	Encoder extended in ENC_2: Position, 32 bit, coarse
+S-0-0610.2.23	never	UnsignedDecimal	Incr	Encoder extended in ENC_2: Marker position, 32 bit, fine
+S-0-0610.2.24	never	UnsignedDecimal	Incr	Encoder extended in ENC_2: Marker position, 32 bit, coarse
+S-0-0611.1.1	pm_or_cm	Binary		Encoder extended in, config. ENC_1: Configuration
+S-0-0611.1.12	pm_or_cm	UnsignedDecimal	µs	Encoder extended in, config. ENC_1: Refresh time
+S-0-0611.1.21	pm_or_cm	UnsignedDecimal[]	Incr/Rev	Encoder extended in, config. ENC_1: Resolution, position
+S-0-0611.1.22	pm_or_cm	UnsignedDecimal[]	Incr	Encoder extended in, config. ENC_1: Overflow threshold pos.
+S-0-0611.1.23	pm_or_cm	UnsignedDecimal[]	Rev	Encoder extended in, config. ENC_1: Absolute position range
+S-0-0611.1.24	pm_or_cm	UnsignedDecimal[]	DP/Rev	Encoder extended in, config. ENC_1: Resolution (analog)
+S-0-0611.1.136	pm_or_cm	Text		Absolute encoder buffer ENC_1: Serial number
+S-0-0611.1.158	pm_or_cm	UnsignedDecimal[]	Incr	Encoder extended in, config. ENC_1: Abs. pos. range, intern.
+S-0-0611.2.1	pm_or_cm	Binary		Encoder extended in, config. ENC_2: Configuration
+S-0-0611.2.12	pm_or_cm	UnsignedDecimal	µs	Encoder extended in, config. ENC_2: Refresh time
+S-0-0611.2.21	pm_or_cm	UnsignedDecimal[]	Incr/Rev	Encoder extended in, config. ENC_2: Resolution, position
+S-0-0611.2.22	pm_or_cm	UnsignedDecimal[]	Incr	Encoder extended in, config. ENC_2: Overflow threshold pos.
+S-0-0611.2.23	pm_or_cm	UnsignedDecimal[]	Rev	Encoder extended in, config. ENC_2: Absolute position range
+S-0-0611.2.24	pm_or_cm	UnsignedDecimal[]	DP/Rev	Encoder extended in, config. ENC_2: Resolution (analog)
+S-0-0611.2.136	pm_or_cm	Text		Absolute encoder buffer ENC_2: Serial number
+S-0-0611.2.158	pm_or_cm	UnsignedDecimal[]	Incr	Encoder extended in, config. ENC_2: Abs. pos. range, intern.
+S-0-0613.1.156	never	Hex[]		Absolute encoder buffer ENC_1: Absolute encoder offset
+S-0-0613.1.157	never	Hex		Absolute encoder buffer ENC_1: Diagnostic status
+S-0-0613.2.156	never	Hex[]		Absolute encoder buffer ENC_2: Absolute encoder offset
+S-0-0613.2.157	never	Hex		Absolute encoder buffer ENC_2: Diagnostic status
+S-0-0822.0.0	always	UnsignedDecimal	%	Torque/force control: Ramp value
+S-0-0823.0.0	always	UnsignedDecimal	ms	Torque/force control: Ramp time
+S-0-0824.0.0	never	Binary		Torque/force status: Actual value = command value
+S-0-0826.0.0	always	UnsignedDecimal	%	Torque/force status: Window
+S-0-0900.0.0	always	Hex		Dynamic alias mapping CON_1: Number
+S-0-0901.0.0	never	Hex		Dynamic alias mapping CON_1: Content
+S-0-0902.0.0	always	Hex		Dynamic alias mapping CON_2: Number
+S-0-0903.0.0	never	Hex		Dynamic alias mapping CON_2: Content
+S-0-0904.0.0	always	Hex		Dynamic alias mapping ENG: Number
+S-0-0905.0.0	never	Hex[]		Lightpipe: Configuration display values
+S-0-0915.0.0	pm_or_cm	Binary		SoE protocol: Telegram type parameter FSoE
+S-0-1000.0.0	never	Hex[]		MCI identification: Classes & versions
+S-0-1002.0.0	pm_or_cm	UnsignedDecimal	µs	MCI timing: Cycle time (tScyc)
+S-0-1005.0.0	never	UnsignedDecimal	µs	MCI timing: Minimum feedback processing time (t5)
+S-0-1006.0.0	pm_or_cm	UnsignedDecimal	µs	MCI timing: AT0 transmission starting time (t1)
+S-0-1007.0.0	pm_or_cm	UnsignedDecimal	µs	MCI timing: Feedback capture point (TSync)
+S-0-1019.0.0	never	Hex[]		IP target setting FIELD: MAC address
+S-0-1019.0.140	never	Text		IP target setting FIELD: Component Name
+S-0-1019.10.0	never	Hex[]		IP target setting PANEL: MAC address
+S-0-1019.10.140	never	Text		IP target setting PANEL: Component Name
+S-0-1020.0.0	always	UnsignedDecimal[]		IP target setting FIELD: IP address
+S-0-1020.0.1	never	UnsignedDecimal[]		IP active setting FIELD: IP address
+S-0-1020.10.0	always	UnsignedDecimal[]		IP target setting PANEL: IP address
+S-0-1020.10.1	never	UnsignedDecimal[]		IP active setting PANEL: IP address
+S-0-1021.0.0	always	UnsignedDecimal[]		IP target setting FIELD: Subnet mask
+S-0-1021.0.1	never	UnsignedDecimal[]		IP active setting FIELD: Subnet mask
+S-0-1021.10.0	always	UnsignedDecimal[]		IP target setting PANEL: Subnet mask
+S-0-1021.10.1	never	UnsignedDecimal[]		IP active setting PANEL: Subnet mask
+S-0-1022.0.0	always	UnsignedDecimal[]		IP target setting FIELD: Gateway address
+S-0-1022.0.1	never	UnsignedDecimal[]		IP active setting FIELD: Gateway address
+S-0-1022.10.0	always	UnsignedDecimal[]		IP target setting PANEL: Gateway address
+S-0-1022.10.1	never	UnsignedDecimal[]		IP active setting PANEL: Gateway address
+S-0-1023.0.0	pm_or_cm	UnsignedDecimal	µs	MCI timing: Maximum synchronization jitter
+S-0-1023.0.140	never	SignedDecimal	ns	EtherCAT bus: Sync0 Jitter
+S-0-1026.0.0	never	Text		MCI identification: Identifier of comm. logicware
+S-0-1028.0.0	never	UnsignedDecimal		MCI timing: Cumulated synchronization failures
+S-0-1032.0.0	always	Binary		Sercos protocol: Communication control
+S-0-1034.0.0	always	Hex		Sercos protocol: PHY error counter Port1 and Port2
+S-0-1037.0.0	never	UnsignedDecimal	ns	MCI timing: Slave Jitter
+S-0-1039.0.0	always	Text		IP target setting FIELD: Hostname
+S-0-1039.0.1	never	Text		IP active setting FIELD: Hostname
+S-0-1039.10.0	always	Text		IP target setting PANEL: Hostname
+S-0-1039.10.1	never	Text		IP active setting PANEL: Hostname
+S-0-1040.0.0	always	UnsignedDecimal		MCI identification: Drive address
+S-0-1042.0.0	never	Hex		MCI identification: Topology index
+S-0-1045.0.0	never	Hex		Sercos protocol: Device Status (S-Dev)
+S-0-1046.0.0	never	UnsignedDecimal[]		MCI identification: Slave addresses of the device
+S-0-1047.0.0	never	UnsignedDecimal	µs	MCI timing: Maximum Consumer Activation Time
+S-0-1048.0.0	always	Binary cmd		IP target setting FIELD: C6100 Command Activate IP settings
+S-0-1048.0.1	always	Binary		IP target setting FIELD: IP options
+S-0-1048.0.2	never	Binary		IP active setting FIELD: IP options
+S-0-1048.0.140	never	Hex		IP active setting FIELD: IP status
+S-0-1048.0.141	always	Hex		IP target setting FIELD: Advanced IP options
+S-0-1048.0.142	never	Hex		IP active setting FIELD: Advanced IP options
+S-0-1048.0.143	always	Hex		IP target setting FIELD: TCP Management
+S-0-1048.10.0	always	Binary cmd		IP target setting PANEL: C6100 Command Activate IP settings
+S-0-1048.10.1	always	Binary		IP target setting PANEL: IP options
+S-0-1048.10.2	never	Binary		IP active setting PANEL: IP options
+S-0-1048.10.140	never	Hex		IP active setting PANEL: IP status
+S-0-1048.10.141	always	Hex		IP target setting PANEL: Advanced IP options
+S-0-1048.10.142	never	Hex		IP active setting PANEL: Advanced IP options
+S-0-1050.0.1	pm_or_cm	Hex		MCI connection 1: Setup
+S-0-1050.0.2	pm_or_cm	UnsignedDecimal		MCI connection 1: Number
+S-0-1050.0.3	pm_or_cm	Hex		MCI connection 1: Telegram assignment
+S-0-1050.0.4	never	UnsignedDecimal		MCI connection 1: Max. length of connection
+S-0-1050.0.5	never	UnsignedDecimal		MCI connection 1: Current length of connection
+S-0-1050.0.6	pm_or_cm	Idn[]		MCI connection 1: Configuration list (EIDN)
+S-0-1050.0.7	pm_or_cm	SignedDecimal		MCI connection 1: Connection class
+S-0-1050.0.8	never	Binary		MCI connection 1: Connection control (C-Con)
+S-0-1050.0.9	never	UnsignedDecimal		MCI connection 1: State
+S-0-1050.0.10	pm_or_cm	UnsignedDecimal	µs	MCI connection 1: Producer cycle time
+S-0-1050.0.11	pm_or_cm	UnsignedDecimal		MCI connection 1: Allowed data losses
+S-0-1050.0.12	never	UnsignedDecimal		MCI connection 1: Error counter data losses
+S-0-1050.0.140	never	Hex[]		MCI connection 1: Process data image
+S-0-1050.0.141	never	UnsignedDecimal	µs	MCI connection 1: EtherCAT, Frame To Sync0 Time
+S-0-1050.1.1	pm_or_cm	Hex		MCI connection 2: Setup
+S-0-1050.1.2	pm_or_cm	UnsignedDecimal		MCI connection 2: Number
+S-0-1050.1.3	pm_or_cm	Hex		MCI connection 2: Telegram assignment
+S-0-1050.1.4	never	UnsignedDecimal		MCI connection 2: Max. length of connection
+S-0-1050.1.5	never	UnsignedDecimal		MCI connection 2: Current length of connection
+S-0-1050.1.6	pm_or_cm	Idn[]		MCI connection 2: Configuration list (EIDN)
+S-0-1050.1.7	pm_or_cm	SignedDecimal		MCI connection 2: Connection class
+S-0-1050.1.8	never	Binary		MCI connection 2: Connection control (C-Con)
+S-0-1050.1.9	never	UnsignedDecimal		MCI connection 2: State
+S-0-1050.1.10	pm_or_cm	UnsignedDecimal	µs	MCI connection 2: Producer cycle time
+S-0-1050.1.11	pm_or_cm	UnsignedDecimal		MCI connection 2: Allowed data losses
+S-0-1050.1.12	never	UnsignedDecimal		MCI connection 2: Error counter data losses
+S-0-1050.1.140	never	Hex[]		MCI connection 2: Process data image
+S-0-1050.1.141	never	UnsignedDecimal	µs	MCI connection 2: EtherCAT, Frame To Sync0 Time
+S-0-1050.2.1	pm_or_cm	Hex		MCI connection 3: Setup
+S-0-1050.2.2	pm_or_cm	UnsignedDecimal		MCI connection 3: Number
+S-0-1050.2.3	pm_or_cm	Hex		MCI connection 3: Telegram assignment
+S-0-1050.2.4	never	UnsignedDecimal		MCI connection 3: Max. length of connection
+S-0-1050.2.5	never	UnsignedDecimal		MCI connection 3: Current length of connection
+S-0-1050.2.6	pm_or_cm	Idn[]		MCI connection 3: Configuration list (EIDN)
+S-0-1050.2.7	pm_or_cm	SignedDecimal		MCI connection 3: Connection class
+S-0-1050.2.8	never	Binary		MCI connection 3: Connection control (C-Con)
+S-0-1050.2.9	never	UnsignedDecimal		MCI connection 3: State
+S-0-1050.2.10	pm_or_cm	UnsignedDecimal	µs	MCI connection 3: Producer cycle time
+S-0-1050.2.11	pm_or_cm	UnsignedDecimal		MCI connection 3: Allowed data losses
+S-0-1050.2.12	never	UnsignedDecimal		MCI connection 3: Error counter data losses
+S-0-1050.2.140	never	Hex[]		MCI connection 3: Process data image
+S-0-1050.2.141	never	UnsignedDecimal	µs	MCI connection 3: EtherCAT, Frame To Sync0 Time
+S-0-1050.2.202	pm_or_cm	Idn[]		MCI connection 3: Configuration list SoE
+S-0-1050.3.1	pm_or_cm	Hex		MCI connection 4: Setup
+S-0-1050.3.2	pm_or_cm	UnsignedDecimal		MCI connection 4: Number
+S-0-1050.3.3	pm_or_cm	Hex		MCI connection 4: Telegram assignment
+S-0-1050.3.4	never	UnsignedDecimal		MCI connection 4: Max. length of connection
+S-0-1050.3.5	never	UnsignedDecimal		MCI connection 4: Current length of connection
+S-0-1050.3.6	pm_or_cm	Idn[]		MCI connection 4: Configuration list (EIDN)
+S-0-1050.3.7	pm_or_cm	SignedDecimal		MCI connection 4: Connection class
+S-0-1050.3.8	never	Binary		MCI connection 4: Connection control (C-Con)
+S-0-1050.3.9	never	UnsignedDecimal		MCI connection 4: State
+S-0-1050.3.10	pm_or_cm	UnsignedDecimal	µs	MCI connection 4: Producer cycle time
+S-0-1050.3.11	pm_or_cm	UnsignedDecimal		MCI connection 4: Allowed data losses
+S-0-1050.3.12	never	UnsignedDecimal		MCI connection 4: Error counter data losses
+S-0-1050.3.140	never	Hex[]		MCI connection 4: Process data image
+S-0-1050.3.141	never	UnsignedDecimal	µs	MCI connection 4: EtherCAT, Frame To Sync0 Time
+S-0-1050.3.202	pm_or_cm	Idn[]		MCI connection 4: Configuration list SoE
+S-0-1051.0.0	never	Hex[]		Sercos protocol: Image of connection setups
+S-0-1099.0.1	always	Hex		Communication test: Conformity purpose - configuration
+S-0-1099.0.2	always	Hex		Communication test: Conformity purpose - container
+S-0-1099.0.140	always	Hex		Communication patch: Control word
+S-0-1099.0.141	never	Hex[]		Communication patch: Container
+S-0-1099.0.150	always	Hex		Communication test object: Conformance Test-4Byte
+S-0-1099.0.154	never	Hex[]		Communication patch 2: Container
+S-0-1099.1.154	never	Hex[]		Communication patch 3: Container
+S-0-1099.2.154	never	Hex[]		Communication patch 4: Container
+S-0-1300.0.1	never	Text		Electronic type plate DEVICE: Component name
+S-0-1300.0.3	never	UnsignedDecimal		Electronic type plate DEVICE: Sercos Vendor Code
+S-0-1300.0.4	never	Text		Electronic type plate DEVICE: Manufacturer device name
+S-0-1300.0.5	never	Text		Electronic type plate DEVICE: Vendor Device ID
+S-0-1300.0.8	never	Text		Electronic type plate DEVICE: Manufacturer hardware version
+S-0-1300.0.9	never	Text		Electronic type plate DEVICE: Manufacturer software version
+S-0-1300.0.11	never	Text		Electronic type plate DEVICE: Order number
+S-0-1300.0.12	never	Text		Electronic type plate DEVICE: Serial Number
+S-0-1300.1.1	never	Text		Electronic type plate CTRL: Component name
+S-0-1300.1.3	never	UnsignedDecimal		Electronic type plate CTRL: Sercos Vendor Code
+S-0-1300.1.4	never	Text		Electronic type plate CTRL: Manufacturer device name
+S-0-1300.1.5	never	Text		Electronic type plate CTRL: Vendor Device ID
+S-0-1300.1.8	never	Text		Electronic type plate CTRL: Manufacturer hardware version
+S-0-1300.1.9	never	Text		Electronic type plate CTRL: Manufacturer software revision
+S-0-1300.1.11	never	Text		Electronic type plate CTRL: Order number
+S-0-1300.1.12	never	Text		Electronic type plate CTRL: Serial Number
+S-0-1300.20.1	never	Text		Electronic type plate MOTOR: Component name
+S-0-1300.20.3	never	UnsignedDecimal		Electronic type plate MOTOR: Sercos Vendor Code
+S-0-1300.20.4	never	Text		Electronic type plate MOTOR: Manufacturer device name
+S-0-1300.20.5	never	Text		Electronic type plate MOTOR: Vendor Device ID
+S-0-1300.20.8	never	Text		Electronic type plate MOTOR: Manufacturer hardware version
+S-0-1300.20.9	never	Text		Electronic type plate MOTOR: Manufacturer software revision
+S-0-1300.20.11	never	Text		Electronic type plate MOTOR: Order number
+S-0-1300.20.12	never	Text		Electronic type plate MOTOR: Serial Number
+S-0-1301.0.0	never	Hex[]		Device functions: List of GDP classes
+S-0-1302.0.1	never	Hex		Device functions: FSP type drive
+S-0-1302.0.3	always	Text		Application: Type
+S-0-1302.1.1	never	Hex		Device functions: FSP type power supply
+S-0-1302.2.1	never	Hex		Device functions: FSP type encoder
+S-0-1303.0.1	never	Idn[]		Diagnostic trace: Configuration
+S-0-1303.0.2	always	Hex		Diagnostic trace: Control
+S-0-1303.0.3	never	Hex		Diagnostic trace: State
+S-0-1303.0.10	never	Hex[]		Diagnostic trace: Main diagnostics
+S-0-1303.0.11	never	Time[]		Diagnostic trace: System time
+S-0-1303.0.12	never	Hex[]		Diagnostic trace: Detailed diagnostics
+S-0-1303.0.13	never	UnsignedDecimal[]	µs	Diagnostic trace: System time, fine
+S-0-1303.0.14	never	UnsignedDecimal[]	s	Diagnostic trace: System time, coarse
+S-0-1305.0.1	always	Time		System time: Value
+S-0-1305.0.2	always	UnsignedDecimal	µs	System time: Fine
+S-0-1305.0.3	always	UnsignedDecimal	s	System time: Coarse
+S-0-1305.0.142	never	UnsignedDecimal	µs	System time: Internal fine
+S-0-1350.0.0	always	Binary cmd		Device reboot: C6400 Command
+S-0-1601.0.0	never	Hex[]		Device functions: List of FSP drive classes
+S-0-1700.0.1	never	Hex[]		Device functions: List of FSP power supply classes
+S-0-1700.0.2	pm_or_cm	UnsignedDecimal[]		Power supply, topology: List of supplied drives
+S-0-1702.0.1	never	SignedDecimal	V	Mains measurement: Peak voltage, actual value
+S-0-1702.0.2	never	SignedDecimal	A	Mains measurement: Peak current, actual value
+S-0-1702.0.9	never	SignedDecimal	V	Mains measurement: Voltage L1-L2, actual value
+S-0-1702.0.10	never	SignedDecimal	V	Mains measurement: Voltage L2-L3, actual value
+S-0-1702.0.11	never	SignedDecimal	V	Mains measurement: Voltage L3-L1, actual value
+S-0-1702.0.12	never	SignedDecimal	Hz	Mains measurement: Frequency, actual value
+S-0-1702.0.13	never	SignedDecimal	W	Mains measurement: Power, actual value
+S-0-1702.0.14	always	SignedDecimal	Ws	Mains measurement: Short-term energy counter
+S-0-1702.0.15	always	SignedDecimal	kWh	Mains measurement: Long-term energy counter
+S-0-1702.0.16	never	SignedDecimal		Mains measurement: Power factor
+S-0-1702.0.17	never	SignedDecimal	V	Mains measurement: Voltage L1-L2, RMS value
+S-0-1702.0.18	never	SignedDecimal	V	Mains measurement: Voltage L2-L3, RMS value
+S-0-1702.0.19	always	SignedDecimal	V	Mains measurement: Voltage L3-L1, RMS value
+S-0-1702.0.140	pm_or_cm	Float	Ws	Brake resistor: Energy counter
+S-0-1702.0.141	never	SignedDecimal	W	Brake resistor: Power, actual value
+S-0-1702.0.152	never	SignedDecimal	A	Mains measurement: Phase current rms value
+S-0-1705.0.1	always	Hex[]		Power supply operation modes: List
+S-0-1707.0.1	never	SignedDecimal	V	Power supply DC bus: Voltage actual value
+S-0-1708.0.22	never	SignedDecimal	W	Mains power ability: Effective positive value
+S-0-1708.0.23	never	SignedDecimal	W	Mains power ability: Effective negative value
+S-0-1709.0.1	pm_or_cm	Hex		Power supply operation modes: Primary operation mode
+S-0-1710.0.2	always	SignedDecimal	%	Power supply thermal model: Actual load value
+S-0-1710.0.4	always	UnsignedDecimal	%	Power supply thermal model: Warning threshold
+S-0-1710.0.5	always	SignedDecimal	%	Power supply thermal model: Maximum load value
+S-0-1711.0.2	always	Binary		Power supply current rms: Control word
+S-0-1711.0.3	never	SignedDecimal	A	Power supply current rms: Actual value
+S-0-1720.0.1	always	Binary		Power supply control: Control word
+S-0-1720.0.2	never	Binary		Power supply control: Status word
+S-0-1720.0.3	pm_or_cm	UnsignedDecimal	s	Power supply control: Power off delay
+S-0-1720.0.150	always	Hex		Power supply control: ON/OFF
+P-0-0001.0.0	pm_or_cm	UnsignedDecimal	Hz	Inverter power section: Switching frequency
+P-0-0004.0.0	always	UnsignedDecimal	µs	Velocity controller: Filter time constant
+P-0-0006.0.0	pm_or_cm	Hex		Diagnostic message: Configuration
+P-0-0008.0.0	pm_or_cm	Binary		E-Stop function: Configuration
+P-0-0010.0.0	never	SignedDecimal	mm	Position command value monitor: Excessive value
+P-0-0011.0.0	never	SignedDecimal	mm	Position command value monitor: Last valid value
+P-0-0013.0.0	never	Idn[]		Application data default: List of all IDNs not corresponding
+P-0-0014.0.0	always	Binary cmd		Marker position function: C1400 Command get marker
+P-0-0016.0.0	pm_or_cm	Binary		Inverter power section: Configuration
+P-0-0018.0.0	pm_or_cm	UnsignedDecimal	Pole pairs	Motor basic data: Number of pole pairs / pole pair distance
+P-0-0019.0.0	always	SignedDecimal	mm	Position initialization: Value
+P-0-0020.0.0	always	Binary		Oscilloscope function: Operation mode
+P-0-0021.0.0	never	SignedDecimal[]	mm/s	Oscilloscope channel 1: List of measured values
+P-0-0022.0.0	never	SignedDecimal[]	mm	Oscilloscope channel 2: List of measured values
+P-0-0023.0.0	always	Idn		Oscilloscope channel 1: Signal selection
+P-0-0024.0.0	always	Idn		Oscilloscope channel 2: Signal selection
+P-0-0025.0.0	always	Hex		Oscilloscope trigger: Mask
+P-0-0026.0.0	always	Idn		Oscilloscope trigger: Signal selection
+P-0-0027.0.0	always	Binary		Oscilloscope trigger: Level
+P-0-0028.0.0	always	Binary		Oscilloscope function: Control word
+P-0-0029.0.0	never	Binary		Oscilloscope function: Status word
+P-0-0030.0.0	always	UnsignedDecimal		Oscilloscope trigger: Edge
+P-0-0031.0.0	always	UnsignedDecimal	µs	Oscilloscope function: Time resolution
+P-0-0032.0.0	always	UnsignedDecimal		Oscilloscope function: Size of memory
+P-0-0033.0.0	always	UnsignedDecimal		Oscilloscope trigger: Number of measured values after event
+P-0-0035.0.0	never	UnsignedDecimal		Oscilloscope trigger: Control offset
+P-0-0035.0.1	never	UnsignedDecimal[]		Oscilloscope trigger: Time
+P-0-0035.0.2	never	Hex		Oscilloscope trigger: Multi Axis Measurement Trigger
+P-0-0035.0.3	always	UnsignedDecimal[]		Oscilloscope function: Start Time
+P-0-0036.0.0	always	Binary		Oscilloscope trigger: External signal
+P-0-0037.0.0	never	Binary		Oscilloscope trigger: Internal signal
+P-0-0038.0.0	never	SignedDecimal	A	Motor current control: Torque-generating current, command
+P-0-0039.0.0	always	SignedDecimal	A	Motor current control: Flux-generating current, command
+P-0-0040.0.0	always	UnsignedDecimal	%	Velocity feedforward: Gain
+P-0-0041.0.0	always	UnsignedDecimal	µs	Position command filter: Time constant, cycl. pos. ctrl
+P-0-0042.0.0	never	UnsignedDecimal		Position command filter: Effective average filter order
+P-0-0043.0.0	never	SignedDecimal	A	Motor current control: Torque-generating current, actual
+P-0-0044.0.0	never	SignedDecimal	A	Motor current control: Flux-generating current, actual
+P-0-0045.0.0	pm_or_cm	Binary		Motor control function: Configuration 1
+P-0-0046.0.0	never	Binary		Motor control function: Status
+P-0-0047.0.0	never	SignedDecimal	mm	Cyclic position control: Active command value
+P-0-0048.0.0	never	SignedDecimal	mm/s	Velocity controller: Command value
+P-0-0049.0.0	never	SignedDecimal	%	Torque/Force: Torque demand
+P-0-0049.0.1	never	Float	Nm	Torque/Force: Effective command value motor
+P-0-0051.0.0	pm_or_cm	UnsignedDecimal	Nm/A	Motor basic data: Torque/force constant
+P-0-0059.0.0	always	SignedDecimal	mm	Position controller: Position offset
+P-0-0062.0.0	pm_or_cm	UnsignedDecimal	Rev/min	Inverter power section: Velocity threshold, PWM switching
+P-0-0063.0.0	never	SignedDecimal	V	Motor current control: Torque-generating voltage
+P-0-0064.0.0	never	SignedDecimal	V	Motor current control: Flux-generating voltage
+P-0-0065.0.0	never	SignedDecimal	V	Motor current control: Absolute voltage value
+P-0-0067.0.0	never	SignedDecimal	A	Motor current control: Phase current U
+P-0-0068.0.0	never	SignedDecimal	A	Motor current control: Phase current V
+P-0-0070.0.0	never	SignedDecimal	%	Torque/force feed forward: Effective additive command value
+P-0-0077.0.0	pm_or_cm	UnsignedDecimal		Encoder interface assignment ENC_1: Value
+P-0-0078.0.0	pm_or_cm	UnsignedDecimal		Encoder interface assignment ENC_2: Value
+P-0-0082.0.0	always	UnsignedDecimal	µs	Motor current control: Current filter time
+P-0-0095.0.0	pm_or_cm	SignedDecimal	mm	Absolute encoder monitoring ENC_1: Window
+P-0-0096.0.0	pm_or_cm	SignedDecimal	mm	Absolute encoder monitoring ENC_2: Window
+P-0-0098.0.0	always	SignedDecimal	mm	Position controller, monitor: Max. model deviation
+P-0-0098.0.1	never	SignedDecimal	mm	Position controller, monitor: Model deviation
+P-0-0099.0.0	always	UnsignedDecimal	ms	Position command processing: Filter time constant
+P-0-0100.0.0	always	SignedDecimal		Cyclic position control: Command value extension
+P-0-0101.0.0	pm_or_cm	Binary		STO function: Configuration
+P-0-0105.0.0	never	Binary		DC bus supply: Status word
+P-0-0106.0.0	never	Binary		STO function: Operating status
+P-0-0109.0.0	always	UnsignedDecimal	%	Torque/force limitation: Peak limit value
+P-0-0110.0.0	never	Binary		Axis state machine: Status word 2, axis
+P-0-0112.0.0	never	SignedDecimal	Rev/min	Motor velocity: Value
+P-0-0113.0.0	pm_or_cm	UnsignedDecimal	Rev/min	Axis mechanical data: Velocity limit, bipolar
+P-0-0114.0.0	pm_or_cm	UnsignedDecimal	V	DC bus supply: Undervoltage threshold
+P-0-0115.0.0	never	Binary		Axis state machine: Status word, axis
+P-0-0116.0.0	never	Binary		Axis state machine: Control word, axis
+P-0-0117.0.0	pm_or_cm	Binary		Externally controlled error reaction: Configuration
+P-0-0117.0.1	pm_or_cm	UnsignedDecimal	ms	Externally controlled error reaction: Reaction time F2/F3
+P-0-0117.0.2	pm_or_cm	UnsignedDecimal	ms	Externally controlled error reaction: Reaction time F4/F6/F7
+P-0-0118.0.0	pm_or_cm	Binary		DC bus supply: Configuration
+P-0-0119.0.0	pm_or_cm	Hex		Axis shutdown: Best possible shutdown
+P-0-0120.0.0	always	Binary		Easy Startup: Control word
+P-0-0121.0.0	pm_or_cm	UnsignedDecimal	Rev	Gearbox encoder ENC_1: Revolutions, mechanical side
+P-0-0122.0.0	pm_or_cm	UnsignedDecimal	Rev	Gearbox encoder ENC_1: Revolutions, encoder side
+P-0-0123.0.0	pm_or_cm	SignedDecimal	mm/Rev	Feed constant encoder 2: Value
+P-0-0124.0.0	pm_or_cm	UnsignedDecimal	Rev	Gearbox encoder ENC_2: Revolutions, mechanical side
+P-0-0125.0.0	pm_or_cm	UnsignedDecimal	Rev	Gearbox encoder ENC_2: Revolutions, encoder side
+P-0-0136.0.0	always	Binary		Oscilloscope trigger: Manual signal
+P-0-0141.0.0	always	UnsignedDecimal	%	Inverter thermal model: Actual load value
+P-0-0142.0.0	always	SignedDecimal	mm/s² 	Position control synchronization: Acceleration
+P-0-0143.0.0	always	SignedDecimal	mm/s	Position control synchronization: Velocity
+P-0-0145.0.0	never	Hex[]		Oscilloscope channel 3: List of measured values
+P-0-0146.0.0	never	Hex[]		Oscilloscope channel 4: List of measured values
+P-0-0147.0.0	always	Idn		Oscilloscope channel 3: Signal selection
+P-0-0148.0.0	always	Idn		Oscilloscope channel 4: Signal selection
+P-0-0149.0.0	never	Idn[]		Oscilloscope function: Signal selection list
+P-0-0150.0.0	never	UnsignedDecimal		Oscilloscope function: Number of valid measured values
+P-0-0151.0.0	always	SignedDecimal	mm	Position control synchronization: Window for modulo format
+P-0-0152.0.0	never	Binary		Position control synchronization: Done
+P-0-0153.0.0	always	SignedDecimal	mm	Home switch: Optimum distance to reference mark
+P-0-0154.0.0	always	Hex		Position control synchronization: Direction
+P-0-0161.0.0	always	UnsignedDecimal	ms	Axis control optimization: Periodic time
+P-0-0162.0.0	always	Binary cmd		Axis control optimization: C1800 Command
+P-0-0163.0.0	always	UnsignedDecimal		Axis control optimization: Damping factor
+P-0-0164.0.0	always	UnsignedDecimal		Axis control optimization: Application
+P-0-0165.0.0	always	Binary		Axis control optimization: Control word
+P-0-0166.0.0	always	SignedDecimal	mm	Axis control optimization: End position negative
+P-0-0167.0.0	always	SignedDecimal	mm	Axis control optimization: End position positive
+P-0-0168.0.0	pm_or_cm	SignedDecimal	mm/s² 	Axis control optimization: Max. accel. to be parameterized
+P-0-0169.0.0	always	SignedDecimal	mm	Axis control optimization: Travel distance
+P-0-0170.0.0	always	SignedDecimal	mm/s² 	Axis control optimization: Acceleration
+P-0-0171.0.0	always	SignedDecimal	mm/s	Axis control optimization: Velocity
+P-0-0177.0.0	pm_or_cm	Hex[]		Absolute encoder buffer ENC_1: Retain data
+P-0-0177.0.1	pm_or_cm	Hex[]		Absolute encoder buffer ENC_1: Static data
+P-0-0178.0.0	pm_or_cm	Hex[]		Absolute encoder buffer ENC_2: Retain data
+P-0-0178.0.1	pm_or_cm	Hex[]		Absolute encoder buffer ENC_2: Static data
+P-0-0180.0.0	always	UnsignedDecimal	µs	Acceleration feedforward: Smoothing time constant
+P-0-0181.0.0	always	UnsignedDecimal[]	Hz	Axis control optimization: Antiresonance frequency
+P-0-0182.0.0	always	UnsignedDecimal[]	Hz	Axis control optimization: Resonance frequency
+P-0-0185.0.0	pm_or_cm	Binary		Encoder function extended ENC_2: Control word
+P-0-0187.0.0	pm_or_cm	Binary		Cyclic position control: Mode
+P-0-0189.0.0	never	Idn[]		Application data debug AXC: IDN list of param. last saved
+P-0-0189.0.2	never	UnsignedDecimal		Application data debug AXC: Flash Age Counter
+P-0-0189.20.0	never	Idn[]		Application data debug COM: IDN list of param. last saved
+P-0-0189.20.2	never	UnsignedDecimal		Application data debug COM: Flash Age Counter
+P-0-0189.20.3	never	Idn[]		Application data debug COM: IDN list of invalid data
+P-0-0190.0.0	never	UnsignedDecimal	s	Operating hours: Control section
+P-0-0191.0.0	never	UnsignedDecimal	s	Operating hours, subsystem POWER: Activity
+P-0-0192.0.0	never	Hex[]		Error memory: Diagnostic numbers
+P-0-0193.0.0	never	UnsignedDecimal[]	s	Error memory: Operating hours of control section
+P-0-0194.0.0	never	Hex[]		Extended error memory: Error number
+P-0-0194.0.1	never	Hex[]		Extended error memory: Detail diagnosis
+P-0-0194.0.2	never	UnsignedDecimal[]	s	Extended error memory: OpHrs, first occurrence
+P-0-0194.0.3	never	Time[]		Extended error memory: System time, first occurrence
+P-0-0194.0.4	never	UnsignedDecimal[]	s	Extended error memory: OpHrs, last occurrence
+P-0-0194.0.5	never	Time[]		Extended error memory: Sytem time, last occurrence
+P-0-0194.0.6	never	Hex[]		Extended error memory: Error counter
+P-0-0194.0.7	never	Binary[]		Extended error memory: Error status bits
+P-0-0194.0.8	always	Binary cmd		Extended error memory: C5100 Reset command
+P-0-0195.0.0	never	Idn[]		Process data, retain: IDN list of retain data
+P-0-0196.0.0	never	Text		Control section firmware CONTR: Additional information
+P-0-0196.20.0	never	Text		Control section firmware COM: Additional information
+P-0-0198.0.0	never	Hex[]		Diagnostics info: Status of active commands
+P-0-0200.0.0	always	SignedDecimal		Touch probe acceptance window 2: Lower limit value
+P-0-0201.0.0	always	SignedDecimal		Touch probe acceptance window 2: Upper limit value
+P-0-0202.0.0	never	SignedDecimal		Touch probe difference 1: Value
+P-0-0203.0.0	never	SignedDecimal		Touch probe difference 2: Value
+P-0-0204.0.0	always	SignedDecimal		Touch probe acceptance window 1: Lower limit value
+P-0-0205.0.0	always	SignedDecimal		Touch probe acceptance window 1: Upper limit value
+P-0-0206.0.0	always	UnsignedDecimal		Touch probe acceptance window 1: Max. number of failures
+P-0-0207.0.0	always	UnsignedDecimal		Touch probe acceptance window 2: Max. number of failures
+P-0-0210.0.0	never	SignedDecimal	V	Analog input 1: Value
+P-0-0212.0.0	never	Idn[]		Analog input function: List of assignable parameters
+P-0-0222.0.0	always	Binary		Travel range limitation: Switch inputs
+P-0-0223.0.0	always	Binary		E-Stop function: Input
+P-0-0224.0.0	never	UnsignedDecimal		Touch probe acceptance window 1: Number of failures
+P-0-0225.0.0	never	UnsignedDecimal		Touch probe acceptance window 2: Number of failures
+P-0-0226.0.0	always	Binary		Touch probe function, extended: Control word
+P-0-0240.0.0	always	UnsignedDecimal	µs	Position controller: Balancing filter, time constant
+P-0-0242.0.0	never	UnsignedDecimal	%	Encoder slip monitor: Current value
+P-0-0243.0.0	always	UnsignedDecimal	%	Encoder slip monitor: Maximum occurred value
+P-0-0244.0.0	always	UnsignedDecimal	%	Encoder slip monitor: Window
+P-0-0250.0.0	always	Text		System identification: Value
+P-0-0250.0.1	always	Hex[]		System identification: Data list
+P-0-0250.0.10	always	Hex[]		System identification: ctrlX DRIVE Engineering view manager
+P-0-0250.0.20	always	Text		System identification: Password
+P-0-0250.0.21	pm_or_cm	Text		System identification: Individual device identifier
+P-0-0257.0.0	always	Binary		Axis shutdown: Activation of test errors
+P-0-0270.0.0	always	Idn		Oscilloscope channel 5: Signal selection
+P-0-0271.0.0	always	Idn		Oscilloscope channel 6: Signal selection
+P-0-0272.0.0	always	Idn		Oscilloscope channel 7: Signal selection
+P-0-0273.0.0	always	Idn		Oscilloscope channel 8: Signal selection
+P-0-0274.0.0	never	Hex[]		Oscilloscope channel 5: List of measured values
+P-0-0275.0.0	never	Hex[]		Oscilloscope channel 6: List of measured values
+P-0-0276.0.0	never	Hex[]		Oscilloscope channel 7: List of measured values
+P-0-0277.0.0	never	Hex[]		Oscilloscope channel 8: List of measured values
+P-0-0279.0.0	always	UnsignedDecimal	ms	Oscilloscope trend mode: Time resolution
+P-0-0280.0.0	never	Hex[]		Oscilloscope trend mode: List of measured values
+P-0-0300.0.0	pm_or_cm	Idn[]		Digital inputs: Assignment list
+P-0-0301.0.0	pm_or_cm	SignedDecimal[]		Digital inputs: Bit numbers
+P-0-0307.0.0	never	Binary		Digital inputs: Image
+P-0-0308.0.0	always	Binary		Digital inputs: Virtual hardware
+P-0-0309.0.0	always	Binary		Digital inputs: Control word
+P-0-0310.0.0	pm_or_cm	Idn[]		Digital outputs: Assignment list
+P-0-0311.0.0	pm_or_cm	SignedDecimal[]		Digital outputs: Bit numbers
+P-0-0313.0.0	always	Binary		Digital outputs: Image
+P-0-0320.0.0	never	Hex[]		Exception data AXC: Value
+P-0-0320.1.2	never	Hex[]		Exception data SAF: Value
+P-0-0322.0.0	never	UnsignedDecimal	%	Performance load AXC: Value
+P-0-0322.0.3	never	UnsignedDecimal	%	Performance load AXC: Unfiltered value
+P-0-0322.0.5	always	UnsignedDecimal	%	Performance load AXC: Peak value
+P-0-0322.20.0	never	UnsignedDecimal	%	Performance load COM: Value
+P-0-0325.0.0	never	Hex		Power supply operation modes: Active operation mode alt.
+P-0-0391.0.0	never	SignedDecimal	mm	Position difference monitor enc.1 - enc.2: Current value
+P-0-0395.0.0	always	Idn[]		Average value filter for display: Signal selection
+P-0-0396.0.0	never	Idn[]		Average value filter for display: Signal selection list
+P-0-0397.0.0	always	UnsignedDecimal[]	ms	Average value filter for display: Time constant
+P-0-0398.0.0	always	Binary		Average value filter for display: Filter type
+P-0-0399.0.0	pm_or_cm	Binary		Simulation mode: Configuration
+P-0-0421.0.3	always	SignedDecimal	mm/s	Torque/force control: High velocity limit value
+P-0-0421.0.4	always	SignedDecimal	mm/s	Torque/force control: Low velocity limit value
+P-0-0421.0.7	never	Binary		Torque/force control: Torque/force limitation status 2
+P-0-0426.0.0	never	Idn[]		Analog output function: List of assignable parameters
+P-0-0434.0.0	never	SignedDecimal	mm	Position controller: Position demand value
+P-0-0440.0.0	never	SignedDecimal	A	Motor current control: Absolute output current value
+P-0-0441.0.0	always	UnsignedDecimal	%	Inverter thermal model: Load warning threshold
+P-0-0442.0.0	never	SignedDecimal	%	Torque/force limitation: Positive limit
+P-0-0443.0.0	never	SignedDecimal	%	Torque/force limitation: Negative limit
+P-0-0444.0.0	never	SignedDecimal	%	Torque/force limitation: Effective peak value
+P-0-0444.0.1	never	SignedDecimal	%	Power limitation: Effective torque/force limit, positive
+P-0-0444.0.2	never	SignedDecimal	%	Power limitation: Effective torque/force limit, negative
+P-0-0444.0.3	never	SignedDecimal	W	Power limitation: Effective limit value, motive
+P-0-0444.0.4	never	SignedDecimal	W	Power limitation: Effective limit value, regenerative
+P-0-0445.0.0	never	Binary		Torque/force limitation: Status word
+P-0-0446.0.0	always	UnsignedDecimal	%	Motor thermal model: Actual load
+P-0-0448.0.0	pm_or_cm	UnsignedDecimal	%	Motor torque model: Temperature-dependent coefficient
+P-0-0449.0.0	pm_or_cm	UnsignedDecimal	Hz	Motor torque model: Speed-dependent coefficient
+P-0-0450.0.0	never	UnsignedDecimal	Nm/A	Motor torque model: Current constant
+P-0-0451.0.0	never	SignedDecimal	%	Process actual values: Acceleration torque/force
+P-0-0452.0.0	never	SignedDecimal	%	Process actual values: Torque/force
+P-0-0453.0.0	always	SignedDecimal	%	Velocity controller: Current integral term
+P-0-0454.0.0	never	SignedDecimal	mm/s	Velocity feedforward: Effective value
+P-0-0455.0.0	never	SignedDecimal	%	Acceleration feedforward: Effective value
+P-0-0456.0.0	always	UnsignedDecimal		Position command processing: Delay
+P-0-0457.0.0	never	SignedDecimal	mm	Position command processing: Position cmd val. without delay
+P-0-0465.0.0	always	SignedDecimal	%	Inverter thermal model: Maximum load value
+P-0-0466.0.0	always	UnsignedDecimal	%	Motor thermal model: Peak load value, captured
+P-0-0467.0.0	always	UnsignedDecimal	%	Brake resistor thermal model: Maximum load
+P-0-0468.0.0	always	UnsignedDecimal	%	Motor thermal model: Prewarning threshold
+P-0-0469.0.0	always	UnsignedDecimal	%	Brake resistor thermal model: Prewarning threshold
+P-0-0470.0.0	always	Binary		Block patch AXC: Control word
+P-0-0470.0.1	always	Text		Block patch AXC: Configuration 1
+P-0-0470.0.2	always	Text		Block patch AXC: Configuration 2
+P-0-0470.0.3	always	Text		Block patch AXC: Configuration 3
+P-0-0471.0.0	never	Hex[]		Block patch AXC: Container
+P-0-0471.0.1	never	Binary		Block patch AXC: Container data status
+P-0-0472.0.0	pm_or_cm	UnsignedDecimal	A	Synchron. motor data: Motor saturation current
+P-0-0474.0.0	always	UnsignedDecimal	ms	Velocity controller, monitor: Tolerance time overload
+P-0-0474.0.1	always	UnsignedDecimal	mm/s	Velocity controller, monitor: Act. velocity window overload
+P-0-0480.0.0	always	Hex		Patch function 1: Source pointer
+P-0-0481.0.0	always	Binary		Patch function 1: Attribute
+P-0-0482.0.0	always	Hex		Patch function 1: Bit mask
+P-0-0483.0.0	always	SignedDecimal		Patch function 1: Exponent
+P-0-0485.0.0	never	Hex		Patch function 1: Display
+P-0-0486.0.0	always	Hex		Patch function 2: Source pointer
+P-0-0487.0.0	always	Binary		Patch function 2: Attribute
+P-0-0488.0.0	always	Hex		Patch function 2: Bit mask
+P-0-0489.0.0	always	SignedDecimal		Patch function 2: Exponent
+P-0-0491.0.0	never	Hex		Patch function 2: Display
+P-0-0492.0.0	always	Text		Symbol-based patch function 1: Data source
+P-0-0493.0.0	never	Hex		Symbol-based patch function 1: Display
+P-0-0493.0.1	never	Hex		Symbol-based patch function 1: 8-byte display
+P-0-0494.0.0	always	Text		Symbol-based patch function 2: Data source
+P-0-0495.0.0	never	Hex		Symbol-based patch function 2: Display
+P-0-0495.0.1	never	Hex		Symbol-based patch function 2: 8-byte display
+P-0-0496.0.0	always	Text		Symbol-based patch function 3: Data source
+P-0-0497.0.0	never	Hex		Symbol-based patch function 3: Display
+P-0-0497.0.1	never	Hex		Symbol-based patch function 3: 8-byte display
+P-0-0498.0.0	always	Text		Symbol-based patch function 4: Data source
+P-0-0499.0.0	never	Hex		Symbol-based patch function 4: Display
+P-0-0499.0.1	never	Hex		Symbol-based patch function 4: 8-byte display
+P-0-0504.0.0	always	Binary cmd		Subdevice STM: C1100 Activate parameterization mode
+P-0-0505.0.0	pm_or_cm	SignedDecimal	°C	Motor temperature monitoring: Lower limit
+P-0-0506.0.0	always	UnsignedDecimal	V	Ident. commutation offset saturation method: Amplitude
+P-0-0507.0.0	always	UnsignedDecimal	Hz	Ident. commutation offset saturation method: Frequency
+P-0-0508.0.0	pm_or_cm	UnsignedDecimal		Commutation offset: Value
+P-0-0509.0.0	always	UnsignedDecimal		Commutation offset: Coarse value
+P-0-0510.0.0	pm_or_cm	UnsignedDecimal	kgm² 	Motor basic data: Rotor inertia
+P-0-0512.0.0	pm_or_cm	UnsignedDecimal		Motor temperature sensor: Type
+P-0-0513.0.0	pm_or_cm	UnsignedDecimal[]	Ω 	Motor temperature sensor: Charact. values
+P-0-0514.0.0	always	UnsignedDecimal	%	Ident. commutation offset sine-wave method: Amplitude
+P-0-0515.0.0	always	UnsignedDecimal		Commutation offset: Value 2
+P-0-0516.0.0	always	UnsignedDecimal	µs	Commutation function: Speed smoothing time constant
+P-0-0517.0.0	always	UnsignedDecimal	%	Ident. commutation offset saturation method: Harmonics rate
+P-0-0518.0.0	always	UnsignedDecimal		Ident. commutation offset saturation method: Factor current
+P-0-0519.0.0	never	Binary		Commutation offset: Status word
+P-0-0520.0.0	always	UnsignedDecimal	Hz	Ident. commutation offset sine-wave method: Frequency
+P-0-0521.0.0	always	UnsignedDecimal		Commutation offset: Effective value
+P-0-0522.0.0	always	Binary		Ident. commutation offset: Control word
+P-0-0523.0.0	always	SignedDecimal	mm	Ident. commutation offset measuring method: Value
+P-0-0524.0.0	always	Binary cmd		Ident. commutation offset: C1200 Command identification
+P-0-0525.0.0	always	Binary		Brake control: Configuration
+P-0-0526.0.0	never	SignedDecimal[]	mm	Brake check: Actual position displacement
+P-0-0528.0.0	always	UnsignedDecimal		Induction motor control: Flux controller p-gain
+P-0-0529.0.0	always	UnsignedDecimal	%	Induction motor control: Scaling of stall current limit
+P-0-0530.0.0	pm_or_cm	UnsignedDecimal	1/100K	Induction motor control: Slip increase
+P-0-0532.0.0	always	UnsignedDecimal	%	Induction motor control: Premagnetization factor
+P-0-0533.0.0	always	UnsignedDecimal	A/V	Motor voltage control: Proportional gain
+P-0-0534.0.0	always	UnsignedDecimal	ms	Motor voltage control: Integral action time
+P-0-0535.0.0	always	UnsignedDecimal	%	Motor voltage control: Voltage command value 2
+P-0-0536.0.0	always	UnsignedDecimal	%	Motor voltage control: Voltage command value 1
+P-0-0537.0.0	pm_or_cm	Binary		Motor thermal model: Configuration
+P-0-0539.0.0	never	Binary		Brake control: Status word
+P-0-0540.0.0	pm_or_cm	UnsignedDecimal	Nm	Brake control: Nominal brake torque
+P-0-0541.0.0	always	Binary cmd		Brake check: C2100 Check command
+P-0-0542.0.0	always	Binary cmd		Brake control: C2000 Release command
+P-0-0543.0.0	always	Binary cmd		Brake control: C3800 Apply command
+P-0-0545.0.0	always	SignedDecimal	%	Brake check: Maximum static friction at released brake
+P-0-0546.0.0	never	SignedDecimal	%	Brake check: Result of static friction at released brake
+P-0-0547.0.0	always	SignedDecimal	%	Brake check: Nominal load of holding system
+P-0-0548.0.0	always	SignedDecimal	mm	Brake check: Position window for brake check
+P-0-0548.0.1	always	SignedDecimal	mm/s	Brake check: Velocity command value
+P-0-0548.0.2	always	UnsignedDecimal	ms	Brake check: Maximum duration released brake
+P-0-0548.0.3	always	UnsignedDecimal	ms	Brake check: Duration brake applied
+P-0-0549.0.0	never	UnsignedDecimal	s	Brake check interval: Operating hours, last successful check
+P-0-0550.0.0	pm_or_cm	UnsignedDecimal	s	Brake check interval: Time interval
+P-0-0551.0.0	never	SignedDecimal	%	Axis mechanical data: Load torque/force actual
+P-0-0553.0.0	always	UnsignedDecimal		Brake check: Factor
+P-0-0554.0.0	never	SignedDecimal	%	Brake check: Torque/force, result of check
+P-0-0555.0.0	never	Binary		Axis control: Messages
+P-0-0556.0.0	pm_or_cm	Binary		Axis configuration: Word
+P-0-0556.0.1	never	UnsignedDecimal[]	ns	Axis configuration: Cycle times
+P-0-0558.0.0	pm_or_cm	Binary		Drive Halt: Configuration
+P-0-0559.0.0	pm_or_cm	UnsignedDecimal	Incr	Position data scaling: Incremental scaling
+P-0-0560.0.0	pm_or_cm	UnsignedDecimal		Actuator function: Configuration
+P-0-0561.0.0	never	SignedDecimal	Rev/min	Velocity controller: Effective motor command value
+P-0-0563.0.0	never	SignedDecimal	mm/s	Velocity command value adjustment: Control effort
+P-0-0564.0.0	pm_or_cm	SignedDecimal	rad/s² 	Acceleration limitation: Motor limit value
+P-0-0565.0.0	always	Binary cmd		Motor data identification: C3600 Identification command
+P-0-0566.0.0	always	Binary cmd		Motor control setting: C4600 Command calculate control data
+P-0-0567.0.0	never	Idn[]		Motor data identification: List of invalid parameters
+P-0-0568.0.0	always	SignedDecimal	V	V/Hz (U/f) control: Voltage boost
+P-0-0569.0.0	always	UnsignedDecimal	Hz/s	V/Hz (U/f) control: Stator frequency slope, maximum value
+P-0-0570.0.0	always	UnsignedDecimal	%	V/Hz (U/f) control: Stall protection proportional gain
+P-0-0571.0.0	always	UnsignedDecimal	ms	V/Hz (U/f) control: Stall protection integral action time
+P-0-0572.0.0	always	UnsignedDecimal	%	V/Hz (U/f) control: Slip compensation factor
+P-0-0573.0.0	always	UnsignedDecimal	%	V/Hz (U/f) control: IxR boost factor
+P-0-0574.0.0	always	SignedDecimal	%	V/Hz (U/f) control: Oscillation damping factor
+P-0-0575.0.0	always	UnsignedDecimal	%	V/Hz (U/f) velocity search: Current factor
+P-0-0576.0.0	always	SignedDecimal	%	V/Hz (U/f) velocity search: Finding point slip factor
+P-0-0577.0.0	pm_or_cm	UnsignedDecimal	%	V/Hz (U/f) control: Square characteristic, lowering factor
+P-0-0578.0.0	pm_or_cm	SignedDecimal	A	V/Hz (U/f) control: DC braking current
+P-0-0579.0.0	always	UnsignedDecimal	ms	V/Hz (U/f) control: DC braking time
+P-0-0580.0.0	never	SignedDecimal	Hz	Motor control function: Actual motor frequency
+P-0-0581.0.0	always	Binary cmd		Motor control setting: C3700 Cmd check encoder orientation
+P-0-0582.0.0	always	Binary		Motor control setting: Configuration
+P-0-0591.0.0	always	Binary		SVC control: Configuration
+P-0-0592.0.9	always	UnsignedDecimal		SVC control: Flux stabilization, damping factor
+P-0-0592.0.12	always	UnsignedDecimal		SVC control: Limitation of flux stabilization
+P-0-0592.0.20	always	UnsignedDecimal		SVC control: Current controller, p-gain adjustment factor
+P-0-0592.0.21	always	UnsignedDecimal		SVC control: Current controller, Tn adjustment factor
+P-0-0592.0.30	always	UnsignedDecimal	ms	SVC control: Velocity feedback filter time
+P-0-0592.0.32	always	UnsignedDecimal		SVC control: Motor resistance adjustment factor
+P-0-0592.0.33	always	UnsignedDecimal		SVC control: Motor inductance adjustment factor
+P-0-0592.0.34	always	UnsignedDecimal		SVC control: EMF adjustment factor
+P-0-0592.0.43	always	UnsignedDecimal		SVC control: Low velocity threshold adjustment
+P-0-0592.0.44	always	UnsignedDecimal	%	SVC control: Load-dependent standstill current increase gain
+P-0-0592.0.52	always	UnsignedDecimal		SVC control: Velocity controller, p-gain adjustment factor
+P-0-0592.0.53	always	UnsignedDecimal		SVC control: Velocity controller, Tn adjustment factor
+P-0-0592.0.54	always	UnsignedDecimal	A	SVC control: Current at standstill
+P-0-0592.0.55	always	UnsignedDecimal	Hz/s	SVC control: Low velocity range, maximum frequency slope
+P-0-0592.0.56	always	UnsignedDecimal		SVC control: Heavy starting, gain
+P-0-0592.0.57	always	UnsignedDecimal		SVC control: Gain torque/force boost at standstill
+P-0-0592.0.58	always	UnsignedDecimal	ms	SVC control: Time constant transition standstill
+P-0-0593.0.1	never	SignedDecimal	Wb	Motor flux model: Motor flux alpha
+P-0-0593.0.2	never	SignedDecimal	Wb	Motor flux model: Motor flux beta
+P-0-0593.0.3	never	SignedDecimal	Wb	Motor flux model: Motor flux, absolute value
+P-0-0593.0.4	never	SignedDecimal	Nm	Motor flux model: Internal torque/force
+P-0-0593.0.5	never	SignedDecimal	° 	Motor flux model: Angle
+P-0-0593.0.6	never	SignedDecimal	Hz	Motor flux model: Motor frequency
+P-0-0593.0.45	never	SignedDecimal	° 	Motor flux model: Low velocity range, angular difference
+P-0-0595.0.0	pm_or_cm	SignedDecimal	°C	Motor temperature monitoring: Minimum coolant temperature
+P-0-0596.0.0	pm_or_cm	SignedDecimal	°C	Motor temperature monitoring: Maximum coolant temperature
+P-0-0600.0.0	always	UnsignedDecimal	Hz	Induction motor data: Rated slip frequency
+P-0-0601.0.0	always	Binary		Motor data identification: Configuration
+P-0-0610.0.0	always	Binary		Inverter current rms: Control word
+P-0-0611.0.0	never	UnsignedDecimal	A	Inverter current rms: Actual value
+P-0-0614.0.0	pm_or_cm	UnsignedDecimal[]	Hz	V/Hz (U/f) control: User-defined characteristics, freq.
+P-0-0615.0.0	pm_or_cm	UnsignedDecimal[]	V	V/Hz (U/f) control: User-defined characteristics, voltages
+P-0-0616.0.0	never	SignedDecimal	A	Motor current control: Phase current W
+P-0-0640.0.0	pm_or_cm	UnsignedDecimal		Motor thermal model 1 config.: Cooling type
+P-0-0641.0.0	always	UnsignedDecimal	µs	Position command filter: Time const., int. interpolation
+P-0-0645.0.0	never	SignedDecimal	mm	Position command filter: Input
+P-0-0646.0.0	always	UnsignedDecimal	Rev/min	Motor data identification: Max. speed
+P-0-0650.0.0	always	SignedDecimal	%	Fixed stop: Torque/force limit value, positive
+P-0-0651.0.0	always	SignedDecimal	%	Fixed stop: Torque/force limit value, negative
+P-0-0660.0.0	pm_or_cm	Binary cmd		Generate application data type plate: C6300 Generate command
+P-0-0660.0.1	never	Hex[]		Application data default: Factory default values
+P-0-0660.0.2	never	Idn[]		Generate application data type plate: IDN list
+P-0-0660.0.3	pm_or_cm	Idn[]		Generate application data type plate: Command config. list
+P-0-0666.0.1	pm_or_cm	SignedDecimal		ABG filter 1: Factor alpha
+P-0-0666.0.2	pm_or_cm	SignedDecimal		ABG filter 1: Factor beta
+P-0-0666.0.3	pm_or_cm	UnsignedDecimal		ABG filter 1: Factor gamma
+P-0-0666.0.5	always	Hex	Incr	ABG filter 1: Tolerance window
+P-0-0666.0.6	pm_or_cm	Hex		ABG filter 1: Control word
+P-0-0666.0.7	never	Hex		ABG filter 1: Status
+P-0-0666.0.8	never	Hex	Incr	ABG filter 1: Position*
+P-0-0666.0.9	never	SignedDecimal		ABG filter 1: Velocity*
+P-0-0666.0.10	never	SignedDecimal		ABG filter 1: Acceleration*
+P-0-0666.0.11	always	UnsignedDecimal		ABG filter 1: Velocity limitation value
+P-0-0666.0.12	always	UnsignedDecimal		ABG filter 1: Acceleration limitation value
+P-0-0666.0.13	never	SignedDecimal		ABG filter 1: Velocity (input)
+P-0-0666.0.14	never	SignedDecimal		ABG filter 1: Acceleration (input)
+P-0-0666.0.15	pm_or_cm	UnsignedDecimal		ABG filter 1: Assignment encoder interface
+P-0-0690.0.0	always	SignedDecimal	mm/s	Velocity command value adjustment: Add. val. process control
+P-0-0699.0.0	never	Hex		Axis operation modes: Active operation mode
+P-0-0806.0.0	never	SignedDecimal	V	Mains measurement: Voltage actual value alt.
+P-0-0816.0.0	never	SignedDecimal	°C	Device temperature: Sensor 2
+P-0-0817.0.0	never	SignedDecimal	°C	Device temperature: Sensor 3
+P-0-0819.0.0	always	SignedDecimal	kWh	Inverter DC bus: Long-term energy counter
+P-0-0833.0.0	never	UnsignedDecimal	V	Brake resistor: Switching threshold, effective value
+P-0-0834.0.0	pm_or_cm	UnsignedDecimal	V	Brake resistor: Switching threshold, command value
+P-0-0844.0.0	always	UnsignedDecimal	%	Brake resistor thermal model: Current load
+P-0-0851.0.0	always	SignedDecimal	Ws	Inverter DC bus: Short-term energy counter
+P-0-0853.0.0	pm_or_cm	SignedDecimal	V	Motor basic data: Max. DC bus voltage
+P-0-0858.0.0	pm_or_cm	UnsignedDecimal[]		Brake resistor external: Type data
+P-0-0859.0.0	never	UnsignedDecimal[]		Brake resistor internal: Type data
+P-0-0860.0.0	pm_or_cm	Binary		Power supply, device: Configuration word
+P-0-0998.0.0	always	SignedDecimal		Touch probe, external signal: Value
+P-0-0999.0.0	pm_or_cm	SignedDecimal		Touch probe, external signal: Overflow threshold
+P-0-1031.0.0	never	Hex[]		Encoder memory, slot 1: Content
+P-0-1031.0.1	pm_or_cm	Text		Encoder memory, slot 1: Identifier
+P-0-1120.0.0	always	UnsignedDecimal[]		Velocity control loop filter: Filter type
+P-0-1121.0.0	always	UnsignedDecimal[]	Hz	Velocity control loop filter: Limit frequ. of low pass
+P-0-1122.0.0	always	UnsignedDecimal[]	Hz	Velocity control loop filter: Bandwidth
+P-0-1123.0.0	always	UnsignedDecimal[]	Hz	Velocity control loop filter: Center frequency
+P-0-1124.0.0	always	UnsignedDecimal[]	dB	Velocity control loop filter: Notch depth
+P-0-1125.0.0	always	UnsignedDecimal[]	dB	Velocity control loop filter: Drop
+P-0-1126.0.0	always	UnsignedDecimal	mNm/(rad/s²)	Acceleration feedforward: Gain velocity control loop
+P-0-1140.0.0	always	UnsignedDecimal[]	Hz	Velocity control loop filter: Numerator natural frequ.
+P-0-1141.0.0	always	UnsignedDecimal[]	Hz	Velocity control loop filter: Denominator natural frequ.
+P-0-1142.0.0	always	UnsignedDecimal[]		Velocity control loop filter: Numerator damping
+P-0-1143.0.0	always	UnsignedDecimal[]		Velocity control loop filter: Denominator damping
+P-0-1150.0.0	never	SignedDecimal		Cmd value generator: Output value
+P-0-1151.0.0	never	Idn[]		Cmd value generator: List of possible target parameters
+P-0-1152.0.0	always	Idn		Cmd value generator: Target parameter assignment
+P-0-1153.0.0	always	Hex		Cmd value generator: Control word
+P-0-1154.0.0	always	SignedDecimal		Cmd value generator: Offset
+P-0-1155.0.0	always	SignedDecimal		Cmd value generator: Amplitude
+P-0-1156.0.0	always	UnsignedDecimal	s	Cmd value generator: Signal period 1
+P-0-1157.0.0	always	UnsignedDecimal	s	Cmd value generator: Signal period 2
+P-0-1158.0.0	always	UnsignedDecimal	s	Cmd value generator: Periodic time
+P-0-1159.0.0	always	UnsignedDecimal	Hz	Cmd value generator: Sine sweep start frequency
+P-0-1160.0.0	always	UnsignedDecimal	Hz	Cmd value generator: Sine sweep end frequency
+P-0-1200.0.0	always	Binary		Velocity control mode: Control word 1
+P-0-1201.0.0	always	SignedDecimal	mm/s² 	Velocity profile: Acceleration 1
+P-0-1202.0.0	always	SignedDecimal	mm/s	Velocity profile: Final speed 1
+P-0-1203.0.0	always	SignedDecimal	mm/s² 	Velocity profile: Acceleration 2
+P-0-1210.0.0	never	Binary		Velocity profile: Status word
+P-0-1211.0.0	always	SignedDecimal	mm/s² 	Velocity profile: Deceleration 1
+P-0-1213.0.0	always	SignedDecimal	mm/s² 	Velocity profile: Deceleration 2
+P-0-1220.0.0	pm_or_cm	Binary		Velocity control mode: Configuration
+P-0-1222.0.0	always	UnsignedDecimal	ms	Velocity profile: Filter time constant
+P-0-1450.0.0	always	SignedDecimal	mm	Easy Startup/techfunc mode positioning: Command value
+P-0-1451.0.0	always	UnsignedDecimal	mm/s	Easy Startup/techfunc mode positioning: Velocity
+P-0-1452.0.0	always	SignedDecimal	mm/s² 	Easy Startup/techfunc mode positioning: Acceleration
+P-0-1453.0.0	always	SignedDecimal	mm/s² 	Easy Startup/techfunc mode positioning: Deceleration
+P-0-1454.0.0	always	Binary		Easy Startup/techfunc mode positioning: Control word
+P-0-1455.0.0	never	Binary		Easy Startup/techfunc mode positioning: Acknowledgment
+P-0-1456.0.0	always	SignedDecimal	mm/s³ 	Easy Startup/techfunc mode positioning: Jerk
+P-0-1460.0.0	always	SignedDecimal	mm/s	Easy Startup/techfunc mode velocity: Command value
+P-0-1460.0.1	never	SignedDecimal	mm/s	Easy Startup/techfunc mode velocity: Value acknowledgment
+P-0-1461.0.0	always	SignedDecimal	mm/s² 	Easy Startup/techfunc mode velocity: Acceleration ramp
+P-0-1463.0.0	always	SignedDecimal	mm/s² 	Easy Startup/techfunc mode velocity: Deceleration ramp
+P-0-1465.0.0	always	SignedDecimal	%	Easy Startup/techfunc mode torque/force: Command value
+P-0-1465.0.1	never	SignedDecimal	%	Easy Startup/techfunc mode torque/force: Value acknowledgm.
+P-0-1466.0.0	always	SignedDecimal	%	Easy Startup/techfunc mode torque/force: Ramp
+P-0-1467.0.0	always	UnsignedDecimal	ms	Easy Startup/techfunc mode torque/force: Ramp time
+P-0-1480.0.0	always	Binary		Easy Startup/techfunc mode velocity: Control word
+P-0-1481.0.0	always	SignedDecimal	mm/s	Easy Startup/techfunc mode velocity: Ramp
+P-0-1482.0.0	always	SignedDecimal	mm	Easy Startup/techfunc mode: Travel distance
+P-0-1483.0.0	always	SignedDecimal	s	Easy Startup/techfunc mode: Dwell time
+P-0-1484.0.0	always	SignedDecimal	mm	Easy Startup/techfunc mode: End position 1
+P-0-1485.0.0	always	SignedDecimal	mm	Easy Startup/techfunc mode: End position 2
+P-0-1516.0.1	never	Hex[]		Carrier unit data: Type-specific
+P-0-1516.0.2	never	Hex[]		Carrier unit data: Unit-specific
+P-0-1516.0.3	never	Text		Carrier unit data: Component identification
+P-0-1516.0.4	never	Text		Carrier unit data: Identification complete device
+P-0-1516.0.5	never	Hex[]		Carrier unit data: Type of complete device
+P-0-1518.0.1	never	Text		Control section data: Control section ident., target config.
+P-0-1518.0.2	never	Text		Control section data: Control section ident., last detected
+P-0-1518.0.3	never	Text		Control section data: Power section ident., last detected
+P-0-1518.0.4	never	Hex[]		Control section data: Axis type data in device
+P-0-1518.0.5	never	Text		Control section data: Component identification data
+P-0-1518.0.6	never	Text		Control section data: Order number of complete device
+P-0-1518.0.7	never	Text		Control section data: Component ident. data, control section
+P-0-1518.0.8	never	Text		Control section data: Communication interface version
+P-0-1519.0.1	never	Hex[]		Output stage data, axis: Type-specific
+P-0-1519.0.2	never	Hex[]		Output stage data, axis: Unit-specific
+P-0-1520.0.0	never	Text		Control section data: Type
+P-0-1520.0.1	never	Hex		Control section data: Physical subdevice number device
+P-0-1520.0.2	never	Hex		Control section data: Physical subdevice numb. firmware unit
+P-0-1522.0.1	never	Hex[]		Brake chopper data: Type-specific
+P-0-1522.0.2	never	Hex[]		Brake chopper data: Unit-specific
+P-0-1523.0.1	never	Hex[]		Charging unit data: Type-specific
+P-0-1523.0.2	never	Hex[]		Charging unit data: Unit-specific
+P-0-1524.0.1	never	Hex[]		Control/communication unit data: Type-specific
+P-0-1524.0.2	never	Hex[]		Control/communication unit data: Unit-specific
+P-0-1524.0.7	never	Text		Control/communication unit data: Component identification
+P-0-1524.0.8	never	Text		Control/communication unit data: Interface version
+P-0-1560.0.1	always	Binary cmd		Servicing function: C9700 Command
+P-0-1560.0.2	always	Hex		Servicing function: C9700 Command input
+P-0-1560.0.4	always	Hex		Servicing function: C9700 Command control word
+P-0-1565.0.0	always	Binary cmd		Parameter file: C6500 Command Create backup file
+P-0-1566.0.0	always	Binary cmd		Parameter file: C6600 Command Restore for device replacement
+P-0-1567.0.0	always	Binary cmd		Parameter file: C6700 Command Update with file content
+P-0-1568.0.0	always	Hex[]		Parameter file integrity: Encrypted checksum
+P-0-1568.0.1	always	Text		Parameter file integrity: Signing password
+P-0-1568.0.3	always	Binary		Parameter file integrity: Configuration
+P-0-1862.0.0	always	Hex		DRIVElink function: Configuration
+P-0-1864.0.0	always	UnsignedDecimal		DRIVElink function: Target State in CM
+P-0-1865.0.0	always	UnsignedDecimal[]		DRIVElink connection 2: Consumer data, topology index
+P-0-1870.0.0	never	Idn[]		Extrapolator: IDN list, input value selection
+P-0-1870.0.1	pm_or_cm	Idn		Extrapolator: Input value
+P-0-1870.0.2	pm_or_cm	UnsignedDecimal		Extrapolator: Number of steps
+P-0-1870.0.3	never	SignedDecimal		Extrapolator: Output value, fine
+P-0-1870.0.4	never	SignedDecimal		Extrapolator: Output value, coarse
+P-0-1873.0.0	never	Hex		DRIVElink function: Active Configuration
+P-0-1936.0.0	never	Text		Application data: SOFT message
+P-0-2000.0.0	never	Text		OSS data 1: License info
+P-0-2000.0.1	never	Text		OSS data 1: License text 1
+P-0-2000.1.0	never	Text		OSS data 2: License info
+P-0-2000.1.1	never	Text		OSS data 2: License text 1
+P-0-2000.2.0	never	Text		OSS data 3: License info
+P-0-2000.2.1	never	Text		OSS data 3: License text 1
+P-0-2000.3.0	never	Text		OSS data 4: License info
+P-0-2000.3.1	never	Text		OSS data 4: License text 1
+P-0-2000.3.2	never	Text		OSS data 1: License text 2
+P-0-2000.4.0	never	Text		OSS data 5: License info
+P-0-2000.4.1	never	Text		OSS data 5: License text 1
+P-0-2000.4.2	never	Text		OSS data 2: License text 2
+P-0-2000.5.0	never	Text		OSS data 6: License info
+P-0-2000.5.1	never	Text		OSS data 6: License text 1
+P-0-2000.6.0	never	Text		OSS data 7: License info
+P-0-2000.6.1	never	Text		OSS data 7: License text 1
+P-0-2000.7.0	never	Text		OSS data 8: License info
+P-0-2000.7.1	never	Text		OSS data 8: License text 1
+P-0-2000.8.0	never	Text		OSS data 9: License info
+P-0-2000.8.1	never	Text		OSS data 9: License text 1
+P-0-2000.9.0	never	Text		OSS data 10: License info
+P-0-2000.9.1	never	Text		OSS data 10: License text 1
+P-0-2003.0.1	pm_or_cm	Hex[]		Optional firmware functions: Selection
+P-0-2003.0.2	never	Hex[]		Optional firmware functions: Active
+P-0-2003.0.3	never	Hex[]		Optional firmware functions: Selectable
+P-0-2003.0.4	pm_or_cm	Binary		Optional firmware functions: Licensed range of functions
+P-0-2003.0.5	pm_or_cm	Binary		Optional firmware functions: Techfunc licensing
+P-0-2003.0.6	never	UnsignedDecimal[]	s	Optional firmware functions: Operating hours at change
+P-0-2003.0.7	never	UnsignedDecimal		Optional firmware functions: Performance points, maximum
+P-0-2003.0.8	never	Hex[]		Optional firmware functions: Available
+P-0-2003.0.11	pm_or_cm	Binary		Optional firmware functions: Safety licensing
+P-0-2003.0.12	pm_or_cm	Binary		Optional firmware functions: Deprecated licensing
+P-0-2005.0.0	pm_or_cm	Hex[]		B-Sample function: Activation list
+P-0-2005.0.1	never	Hex[]		B-Sample function: Permanently activated functions
+P-0-2005.0.2	never	Hex[]		B-Sample function: Permanently deactivated functions
+P-0-2009.0.0	always	Hex		Internal communication: Timing test data container
+P-0-2051.0.0	pm_or_cm	UnsignedDecimal[]	s	Motor diagnostics: Operating hours
+P-0-2052.0.0	pm_or_cm	SignedDecimal[]	°C	Motor diagnostics: Thermal operation data
+P-0-2053.0.0	pm_or_cm	UnsignedDecimal[]	Rev/min	Motor diagnostics: Mechanical operating data
+P-0-2053.0.1	pm_or_cm	SignedDecimal[]	s	Motor diagnostics: Velocity histogram
+P-0-2053.0.2	pm_or_cm	SignedDecimal[]	s	Motor diagnostics: Torque histogram
+P-0-2053.0.3	pm_or_cm	SignedDecimal[]	s	Motor diagnostics: Temperature histogram
+P-0-2053.0.4	pm_or_cm	SignedDecimal[]		Motor diagnostics: Current histogram
+P-0-2054.0.0	pm_or_cm	UnsignedDecimal	1000 Rev	Motor diagnostics: Operational performance
+P-0-2054.0.1	pm_or_cm	Float[]		Motor diagnostics: Brake
+P-0-2055.0.0	pm_or_cm	Text		Motor diagnostics: Change identification
+P-0-2141.0.0	pm_or_cm	Text		Motor identification, type plate: Type
+P-0-2200.0.0	never	Idn[]		IDN list generic: Bit type parameter
+P-0-2206.0.0	pm_or_cm	UnsignedDecimal	ms	Brake delay time, type plate: Drive On
+P-0-2207.0.0	pm_or_cm	UnsignedDecimal	ms	Brake delay time, type plate: Drive Off
+P-0-2300.0.0	never	Hex[]		Alias: SoE list of 32-bit IDNs
+P-0-2300.0.2	never	Hex[]		Alias: CANopen list of 32-bit IDNs
+P-0-2301.0.0	never	Hex[]		Alias: SoE list of 16-bit alias IDNs
+P-0-2301.0.2	never	Hex[]		Alias: CANopen list of CANopen objects
+P-0-2602.10.1	never	Hex[]		Logbook event, subsystem ONBOARD: Value
+P-0-2602.10.2	never	UnsignedDecimal[]	s	Logbook event, subsystem ONBOARD: Time stamp
+P-0-2602.10.20	never	UnsignedDecimal	s	Operating hours, subsystem ONBOARD: Operation
+P-0-2602.11.1	never	Hex[]		Logbook event, subsystem ONBOARD_2ND: Value
+P-0-2602.11.2	never	UnsignedDecimal[]	s	Logbook event, subsystem ONBOARD_2ND: Time stamp
+P-0-2602.11.20	never	UnsignedDecimal	s	Operating hours, subsystem ONBOARD_2ND: Operation
+P-0-2602.80.1	never	Hex[]		Logbook event, subsystem POWER: Value
+P-0-2602.80.2	never	UnsignedDecimal[]	s	Logbook event, subsystem POWER: Time stamp
+P-0-2602.80.20	never	UnsignedDecimal	s	Operating hours, subsystem POWER: Operation
+P-0-2602.80.22	never	UnsignedDecimal	s	Operating hours, subsystem POWER: Activity
+P-0-2602.82.1	never	Hex[]		Logbook event, subsystem SUPPLY: Value
+P-0-2602.82.2	never	UnsignedDecimal[]	s	Logbook event, subsystem SUPPLY: Time stamp
+P-0-2602.82.20	never	UnsignedDecimal	s	Operating hours, subsystem SUPPLY: Operation
+P-0-2602.82.22	never	UnsignedDecimal	s	Operating hours, subsystem SUPPLY: Activity
+P-0-2602.82.23	never	UnsignedDecimal	s	Operating hours, subsystem SUPPLY: Activity uC combined
+P-0-2690.10.121	never	Float[]		CX_SENSE diagnostic ONBOARD: Statistic data
+P-0-2690.10.122	never	UnsignedDecimal[]		CX_SENSE diagnostic ONBOARD: Battery voltage histogram
+P-0-2690.10.123	never	UnsignedDecimal[]		CX_SENSE diagnostic ONBOARD: PCB temperature histogram
+P-0-2690.10.124	never	UnsignedDecimal[]		CX_SENSE diagnostic ONBOARD: Velocity histogram
+P-0-2690.10.125	never	UnsignedDecimal		CX_SENSE diagnostic ONBOARD: Revolution counter
+P-0-2690.10.225	never	UnsignedDecimal[]		CX_SENSE diagnostic ONBOARD: Supply voltage histogram
+P-0-2690.11.121	never	Float[]		CX_SENSE diagnostic ONBOARD_2ND: Statistic data
+P-0-2690.11.123	never	UnsignedDecimal[]		CX_SENSE diagnostic ONBOARD_2ND: PCB temperature histogram
+P-0-2690.11.126	never	UnsignedDecimal[]		CX_SENSE diagnostic ONBOARD_2ND: Motor temp. Histogram
+P-0-2900.0.1	pm_or_cm	Binary		Analog input 1: Control word
+P-0-2900.0.2	pm_or_cm	Idn		Analog input 1: Target parameter
+P-0-2900.0.3	pm_or_cm	SignedDecimal		Analog input 1: Nominal value
+P-0-2900.0.4	pm_or_cm	SignedDecimal		Analog input 1: Offset
+P-0-2900.0.5	pm_or_cm	UnsignedDecimal	ms	Analog input 1: Filter time
+P-0-2900.0.8	pm_or_cm	SignedDecimal	V	Analog input 1: Lower limit of signal range
+P-0-2900.0.9	pm_or_cm	SignedDecimal	V	Analog input 1: Upper limit of signal range
+P-0-2900.0.10	always	UnsignedDecimal	V	Analog input 1: Wire break threshold
+P-0-2900.0.11	always	Float	V	Analog input 1: Virtual hardware
+P-0-2901.0.1	always	Binary		Analog input function: Control word adjustment
+P-0-2901.0.2	always	Binary cmd		Analog input function: C2800 Analog input adjustment command
+P-0-2901.0.3	always	SignedDecimal		Analog input function: Maximum value for adjustment
+P-0-2990.0.6	never	Hex[]		Lightpipe: Configuration display values
+P-0-2990.0.7	never	Hex		Lightpipe: Aggregated set value (drive)
+P-0-2990.0.8	always	Binary		Lightpipe: Control word
+P-0-3060.0.1	pm_or_cm	SignedDecimal	°C	Motor cooling: Fan switch-on temperature
+P-0-3060.0.3	pm_or_cm	UnsignedDecimal	°C	Motor temperature monitoring: Speed-dependent reduction
+P-0-3060.0.4	pm_or_cm	UnsignedDecimal		Motor thermal model 2 config.: Mounting method
+P-0-3060.0.5	pm_or_cm	UnsignedDecimal[]	°C	Motor temperature monitoring: Shutdown reduction/1000rpm
+P-0-3060.0.6	pm_or_cm	Float[]		Motor temperature sensor: Coefficients
+P-0-3060.0.10	pm_or_cm	SignedDecimal[]		Motor thermal model 2 config.: Charact. values
+P-0-3061.0.0	never	Hex		Motor cooling: Status, fan control
+P-0-3071.0.0	never	Hex[]		Motor type plate data, compact: Identification data
+P-0-3072.0.0	never	Hex[]		Motor type plate data, compact: Static type data
+P-0-3073.0.0	never	Hex[]		Motor type plate data, compact: Control loop default values
+P-0-3074.0.0	never	Hex[]		Motor type plate data, compact: Control loop default val. 2
+P-0-3075.0.0	never	Hex[]		Motor type plate data, compact: Application-specific data
+P-0-3100.0.0	pm_or_cm	Hex		Motor type plate: Version of data structure
+P-0-3908.0.1	never	Text		PCB data CONTR: Identification (XML)
+P-0-3908.0.2	never	Hex[]		PCB data CONTR: Characteristics, type-specific (PBF)
+P-0-3908.0.3	never	Hex[]		PCB data CONTR: Characterist., exemplar-specific (PBF)
+P-0-3908.0.8	never	Text		PCB data CONTR: Subsystem, firmware identifier
+P-0-3908.10.1	never	Text		PCB data ONBOARD: Identification (XML)
+P-0-3908.10.2	never	Hex[]		PCB data ONBOARD: Characteristics, type-specific (PBF)
+P-0-3908.10.3	never	Hex[]		PCB data ONBOARD: Characterist., exemplar-specific (PBF)
+P-0-3908.10.8	never	Text		PCB data ONBOARD: Subsystem, firmware identifier
+P-0-3908.11.1	never	Text		PCB data ONBOARD_2ND: Identification (XML)
+P-0-3908.11.2	never	Hex[]		PCB data ONBOARD_2ND: Characteristics, type-specific (PBF)
+P-0-3908.11.3	never	Hex[]		PCB data ONBOARD_2ND: Characterist., exemplar-specific (PBF)
+P-0-3908.11.8	never	Text		PCB data ONBOARD_2ND: Subsystem, firmware identifier
+P-0-3908.20.1	never	Text		PCB data COM: Identification (XML)
+P-0-3908.20.2	never	Hex[]		PCB data COM: Characteristics, type-specific (PBF)
+P-0-3908.20.3	never	Hex[]		PCB data COM: Characterist., exemplar-specific (PBF)
+P-0-3908.20.8	never	Text		PCB data COM: Subsystem, firmware identifier
+P-0-3908.30.1	never	Text		PCB data CARRIER: Identification (XML)
+P-0-3908.30.2	never	Hex[]		PCB data CARRIER: Characteristics, type-specific (PBF)
+P-0-3908.30.3	never	Hex[]		PCB data CARRIER: Characterist., exemplar-specific (PBF)
+P-0-3908.30.8	never	Text		PCB data CARRIER: Subsystem, firmware identifier
+P-0-3908.80.1	never	Text		PCB data POWER: Identification (XML)
+P-0-3908.80.2	never	Hex[]		PCB data POWER: Characteristics, type-specific (PBF)
+P-0-3908.80.3	never	Hex[]		PCB data POWER: Characterist., exemplar-specific (PBF)
+P-0-3908.80.8	never	Text		PCB data POWER: Subsystem, firmware identifier
+P-0-3908.82.1	never	Text		PCB data SUPPLY: Identification (XML)
+P-0-3908.82.2	never	Hex[]		PCB data SUPPLY: Characteristics, type-specific (PBF)
+P-0-3908.82.3	never	Hex[]		PCB data SUPPLY: Characterist., exemplar-specific (PBF)
+P-0-3908.82.8	never	Text		PCB data SUPPLY: Subsystem, firmware identifier
+P-0-3915.0.1	pm_or_cm	Time[]		Module/firmware history: Time stamp
+P-0-3915.0.2	pm_or_cm	Text		Module/firmware history: Component designation
+P-0-3915.0.3	pm_or_cm	Hex[]		Module/firmware history: Cause of error
+P-0-3920.0.0	never	Hex[]		Exception data COM: Value
+P-0-3930.0.0	always	Binary cmd		Parameter file: C7600 Command Create snapshot file
+P-0-3940.0.0	pm_or_cm	UnsignedDecimal	Nm	Reluctance motor data: Torque at nominal current
+P-0-3941.0.0	pm_or_cm	UnsignedDecimal	Nm	Reluctance motor data: Torque at maximum current
+P-0-3942.0.0	pm_or_cm	UnsignedDecimal	° 	Reluctance motor data: Angle at nominal current
+P-0-3943.0.0	pm_or_cm	UnsignedDecimal	° 	Reluctance motor data: Angle at maximum current
+P-0-3944.0.0	pm_or_cm	UnsignedDecimal	Nm	Reluctance motor data: Torque at maximum current w/o reluct.
+P-0-3945.0.0	always	Hex		Motor control function: Configuration 2
+P-0-4002.0.0	pm_or_cm	UnsignedDecimal[]		Synchron. motor data: Charact. of q-ind., factor inductances
+P-0-4003.0.0	pm_or_cm	UnsignedDecimal[]		Synchron. motor data: Charact. of q-ind., factor currents
+P-0-4004.0.0	pm_or_cm	UnsignedDecimal	A	Induction motor data: Magnetizing current
+P-0-4005.0.0	pm_or_cm	SignedDecimal	A	Synchron. motor data: Direct current limit value
+P-0-4010.0.0	always	UnsignedDecimal	kgm² 	Axis mechanical data: Load inertia
+P-0-4011.0.0	never	UnsignedDecimal		EtherCAT bus: Frame Diagnostics
+P-0-4011.0.1	always	UnsignedDecimal		EtherCAT bus: Syncmanager for diagnostics
+P-0-4013.0.0	pm_or_cm	UnsignedDecimal	%	Synchron. motor data: Current limit of demagnetization
+P-0-4014.0.0	pm_or_cm	Binary		Motor basic data: Type of construction
+P-0-4015.0.0	pm_or_cm	UnsignedDecimal	V	Synchron. motor data: Voltage constant
+P-0-4016.0.0	pm_or_cm	UnsignedDecimal	mH	Synchron. motor data: Direct-axis inductance
+P-0-4017.0.0	pm_or_cm	UnsignedDecimal	mH	Synchron. motor data: Q-inductance
+P-0-4028.0.0	never	Binary		Analog profile: Control word
+P-0-4032.0.0	pm_or_cm	UnsignedDecimal[]		Motor, type plate: Data
+P-0-4033.0.0	always	Binary cmd		Motor, type plate: C3200 Command calculate basic data
+P-0-4034.0.0	pm_or_cm	UnsignedDecimal	s	Motor thermal model 1 config.: Time const., motor winding
+P-0-4035.0.0	pm_or_cm	UnsignedDecimal	min	Motor thermal model 1 config.: Time const., motor housing
+P-0-4036.0.0	pm_or_cm	UnsignedDecimal	Rev/min	Motor basic data: Rated speed
+P-0-4037.0.0	pm_or_cm	UnsignedDecimal		Motor thermal model 1 config.: Intermittent overload factor
+P-0-4039.0.0	pm_or_cm	UnsignedDecimal	mH	Induction motor data: Stator leakage inductance
+P-0-4040.0.0	pm_or_cm	UnsignedDecimal	mH	Induction motor data: Rotor leakage inductance
+P-0-4041.0.0	pm_or_cm	UnsignedDecimal	mH	Induction motor data: Motor magnetizing inductance
+P-0-4042.0.0	pm_or_cm	UnsignedDecimal[]		Induction motor data: Charact. of magn. inductance
+P-0-4043.0.0	always	UnsignedDecimal	ms	Induction motor data: Rotor time constant
+P-0-4044.0.0	pm_or_cm	UnsignedDecimal	mH	Motor choke: Phase inductance
+P-0-4046.0.0	never	UnsignedDecimal	A	Current limitation: Active peak value
+P-0-4048.0.0	pm_or_cm	UnsignedDecimal	Ω 	Motor basic data: Stator resistance
+P-0-4049.0.0	pm_or_cm	Float[]		Motor basic data: Motor inductance characteristics
+P-0-4064.0.0	never	SignedDecimal		Password: Level
+P-0-4064.0.2	always	Hex[]		Password level 1: Hash value
+P-0-4064.0.3	always	Hex[]		Password level 1: Configuration
+P-0-4064.0.4	never	Idn[]		Password level 1: Protected parameter list
+P-0-4064.0.5	never	Binary		Password: Level configuration state
+P-0-4064.0.6	always	Idn[]		Password: Ignored parameters list
+P-0-4064.1.2	always	Hex[]		Password level 2: Hash value
+P-0-4064.1.3	always	Hex[]		Password level 2: Configuration
+P-0-4064.1.4	never	Idn[]		Password level 2: Protected parameter list
+P-0-4064.2.2	always	Hex[]		Password level 3: Hash value
+P-0-4064.2.3	always	Hex[]		Password level 3: Configuration
+P-0-4064.2.4	never	Idn[]		Password level 3: Protected parameter list
+P-0-4064.3.3	always	Hex[]		Password level 4: Configuration
+P-0-4064.3.4	never	Idn[]		Password level 4: Protected parameter list
+P-0-4073.0.0	never	Text		MCI state machine: State
+P-0-4075.0.0	never	UnsignedDecimal	ms	EtherCAT bus: Field bus watchdog
+P-0-4077.0.0	never	Binary		Free config profile: Control word
+P-0-4078.0.0	never	Binary		Free config profile: Status word
+P-0-4084.0.0	pm_or_cm	Hex		Drive profile function: Selected
+P-0-4084.0.1	never	Hex[]		Drive profile function: Available
+P-0-4084.0.2	never	Hex		Drive profile function: Default
+P-0-4084.0.3	pm_or_cm	Binary		Drive profile function: Configuration
+P-0-4084.0.6	never	Hex		Drive profile function: Active
+P-0-4085.0.0	always	Binary cmd		Easy Startup: C4700 Command activate mode
+P-0-4088.0.0	pm_or_cm	Binary		Subdevice STM: Master communication configuration
+P-0-4089.0.1	always	UnsignedDecimal		MCI configuration: Master communication, protocol
+P-0-4089.0.2	always	Text		MCI identification: Device name
+P-0-4089.0.7	always	UnsignedDecimal		EtherCAT bus: SII Configured Station Alias
+P-0-4089.0.8	never	UnsignedDecimal		EtherCAT bus: Register Configured Station Alias
+P-0-4089.0.17	never	UnsignedDecimal[]		MCI configuration: List of available protocols
+P-0-4089.0.25	never	Hex[]		EtherCAT bus: Sync Manager configuration
+P-0-4089.0.26	never	Hex[]		EtherCAT bus: FMMU configuration
+P-0-4089.0.27	never	Hex[]		EtherCAT bus: EEPROM Data
+P-0-4089.0.28	never	Hex		EtherCAT bus: Requested Bus State
+P-0-4089.0.29	never	Hex		EtherCAT bus: Current Bus State
+P-0-4089.0.60	never	UnsignedDecimal		MCI configuration: Active protocol
+P-0-4090.0.0	always	Hex		Application data default: Configuration

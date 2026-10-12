@@ -1,0 +1,6 @@
+# Converted Bosch Rexroth manuals are not redistributed. Regenerate them locally from your own PDFs,
+# see manuals/README.md and scripts/pdf_to_md.py.
+manuals/*
+!manuals/README.md
+__pycache__/
+references/test-drive.md

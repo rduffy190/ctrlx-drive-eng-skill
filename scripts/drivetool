@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Run the DriveTool CLI (EAL-based ctrlX DRIVE tool). Rebuilds when sources are newer than the binary.
+# Project location: $DRIVETOOL_PROJECT (default: the EalDotNet repo's src/DriveTool).
+set -euo pipefail
+PROJECT="${DRIVETOOL_PROJECT:-$HOME/Dev/EalDotNet/src/DriveTool}"
+DLL="$PROJECT/bin/Debug/net10.0/drivetool.dll"
+if [[ ! -d "$PROJECT" ]]; then
+  echo "DriveTool project not found at $PROJECT (set DRIVETOOL_PROJECT)" >&2
+  exit 2
+fi
+if [[ ! -f "$DLL" ]] || [[ -n "$(find "$PROJECT" \( -name '*.cs' -o -name '*.csproj' -o -name '*.json' \) -not -path '*/bin/*' -not -path '*/obj/*' -newer "$DLL" -print -quit)" ]]; then
+  echo "Building DriveTool ..." >&2
+  dotnet build "$PROJECT" -nologo -v q >&2
+fi
+exec dotnet "$DLL" "$@"

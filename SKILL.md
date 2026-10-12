@@ -1,6 +1,6 @@
 ---
 name: ctrlx-drive-eng
-description: Engineer Bosch Rexroth ctrlX DRIVE servo drives over Ethernet with the Easy Automation Library (EAL), using the DriveTool CLI that ships with this skill and extending it with new tools. Use it to check status and diagnostics, read or write drive parameters (SERCOS IDNs like S-0-0040), set up an axis (scaling and units, gear ratio, feed/pitch, travel and position limits, velocity/accel/jerk/torque limits), home or set absolute position, run drive commands, back up, diff or restore .par files, record and analyse scope traces, and update .ibf firmware. Includes the Rexroth parameter reference and function/hardware manuals as greppable Markdown. Use it whenever the user mentions a ctrlX DRIVE, servo drive, IDNs, scaling, homing, limits, drive errors (F-codes), scope traces, .par/.ibf files, PM/CM/OM modes, or wants a new drive tool on EAL, even if they don't name EAL.
+description: Engineer Bosch Rexroth ctrlX DRIVE servo drives over Ethernet with the Easy Automation Library (EAL), using the DriveTool CLI that ships with this skill and extending it with new tools. Use it to check status and diagnostics, read or write drive parameters (SERCOS IDNs like S-0-0040), set up an axis (scaling and units, gear ratio, feed/pitch, travel and position limits, velocity/accel/jerk/torque limits), home or set absolute position, run drive commands, back up, diff or restore .par files, record and analyse scope traces, and update .ibf firmware. Can use the Rexroth parameter reference and function/hardware manuals as greppable Markdown. Use it whenever the user mentions a ctrlX DRIVE, servo drive, IDNs, scaling, homing, limits, drive errors (F-codes), scope traces, .par/.ibf files, PM/CM/OM modes, or wants a new drive tool on EAL, even if they don't name EAL.
 ---
 
 # ctrlX DRIVE engineering with EAL
@@ -12,6 +12,18 @@ directly (SiP over Ethernet), not through a ctrlX CORE. For the CORE's Data Laye
 T=~/.claude/skills/ctrlx-drive-eng/scripts/drivetool    # builds on first use / after source changes, then runs
 export CTRLX_DRIVE_IP=<drive-ip>                       # or pass --ip; the test drive's address is in references/test-drive.md (local only)
 ```
+
+### First use on a new machine
+The repo ships the DriveTool source but no EAL binaries, manuals or drive details. Check these before the first
+drive call:
+- **Build:** the first `$T` call builds DriveTool. If it fails, tell the user what to install and let them run it
+  (it needs sudo): `sudo apt install ./ealsdk_*.deb` (Bosch Rexroth EAL SDK; `EAL.dll not found` means it's
+  missing) and the .NET 10 SDK (`dotnet --list-sdks`). Then `dotnet build ~/.claude/skills/ctrlx-drive-eng/drivetool`.
+- **Drive address:** if `references/test-drive.md` doesn't exist, ask the user for the drive's IP, check it with
+  `$T ping --ip <ip>`, then create the file (address, network route if any, type plate from `$T status`). It is
+  gitignored, so it stays on this machine.
+- **Manuals:** if `manuals/` holds only README.md, the Markdown books aren't converted yet. Say so before answering
+  from memory, and offer to convert the user's Rexroth PDFs with `scripts/pdf_to_md.py` (commands in README.md).
 
 Every command prints **JSON on stdout** and progress on **stderr**. Exit codes: `0` ok, `1` error, `2` usage,
 `3` = *a write was planned but not executed* (see Safety).

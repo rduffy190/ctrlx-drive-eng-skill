@@ -12,11 +12,12 @@ params: the "Objects/Parameters" reference book. One "## Object 0x...." heading 
 Text is `pdftotext -layout` output (tables keep their column alignment) with running headers/footers
 removed, margins dedented and hyphenated line breaks joined. `<!-- p.N -->` marks each PDF page start, so
 figures can be rendered later with: mutool draw -o fig.png -r 110 BOOK.pdf N
-Needs poppler-utils (pdftotext) and mupdf-tools (mutool).
+Needs poppler-utils (pdftotext) and mupdf-tools (mutool), or `pip install pymupdf` in place of mutool.
 """
 import argparse
 import os
 import re
+import shutil
 import subprocess
 import sys
 
@@ -46,6 +47,11 @@ def slug(s, n=48):
 
 
 def read_outline(pdf):
+    if shutil.which("mutool") is None:  # e.g. Windows: fall back to PyMuPDF (pip install pymupdf)
+        import fitz
+        with fitz.open(pdf) as doc:
+            return [{"level": lvl, "title": t.replace(LRM, "").strip(), "page": pg}
+                    for lvl, t, pg in doc.get_toc() if pg > 0]
     out = subprocess.run(["mutool", "show", pdf, "outline"], capture_output=True, text=True, check=True).stdout
     entries = []
     for line in out.splitlines():

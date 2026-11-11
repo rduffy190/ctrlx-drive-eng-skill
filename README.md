@@ -13,19 +13,32 @@ git clone https://github.com/rduffy190/ctrlx-drive-eng-skill.git ~/.claude/skill
 
 ## Requirements
 
-- **EAL SDK:** install Bosch Rexroth's `ealsdk` Debian package (tested with 2.6.0.0). It puts `EAL.dll` and
-  `SiP.dll` in `/usr/local/eal_sdk/02VRS`, where DriveTool looks for them. The DLLs are not in this repo.
+- **EAL SDK** (the DLLs are not in this repo):
+  - **Linux:** install Bosch Rexroth's `ealsdk` Debian package (tested with 2.6.0.0). It puts `EAL.dll` and
+    `SiP.dll` in `/usr/local/eal_sdk/02VRS`, where DriveTool looks for them.
+  - **Windows:** unzip `eal4DotNetStandard20_*.zip` (tested with 3.0.1.0) into `eal/` in this folder, so that
+    `eal/eal4DotNetStandard20/bin/EAL.dll` exists. DriveTool finds it there and copies the support DLLs
+    (libzmq, openssl, datalayer) next to the build. `eal/` and `*.zip` are gitignored.
+  - Anywhere else: set `EAL_SDK` to the folder holding `eal4DotNetStandard20`, or pass `-p:EalBinDir=...`.
 - **.NET 10 SDK** (`dotnet --list-sdks` should show 10.x).
-- **Python 3** for the scripts. `scope_report.py --png` also needs matplotlib.
-- **poppler-utils** (`pdftotext`) and **mupdf-tools** (`mutool`), only for converting the manuals.
+- **Python 3** for the scripts (Windows: `winget install Python.Python.3.12`). `scope_report.py --png` also needs matplotlib.
+- **poppler-utils** (`pdftotext`) and **mupdf-tools** (`mutool`), only for converting the manuals. Without
+  `mutool` (Windows), `pip install pymupdf` is used for the bookmarks; `pdftotext` is still needed.
 
 ## Build
 
-Install the SDK package, then build DriveTool:
+Install the SDK, then build DriveTool.
 
+Linux:
 ```bash
 sudo apt install ./ealsdk_*.deb
 dotnet build ~/.claude/skills/ctrlx-drive-eng/drivetool
+```
+
+Windows (PowerShell, .NET 10 SDK installed, e.g. `winget install Microsoft.DotNet.SDK.10`):
+```powershell
+Expand-Archive eal4DotNetStandard20_*.zip eal
+dotnet build drivetool
 ```
 
 If the build stops with `EAL.dll not found in …`, the `ealsdk` package isn't installed. After source changes,
@@ -40,6 +53,9 @@ $T ping --ip <drive-ip>      # check the drive answers
 export CTRLX_DRIVE_IP=<drive-ip>   # or pass --ip on every call
 $T status
 ```
+
+On Windows use `scripts\drivetool.ps1` in place of `scripts/drivetool` (same arguments, same auto-rebuild);
+Git Bash can also run `scripts/drivetool`.
 
 Every command prints JSON on stdout. Commands that write to the drive only print a plan unless `--yes` is
 given (see SKILL.md). Output files (backups, scope captures) go to `output/` under the current directory.

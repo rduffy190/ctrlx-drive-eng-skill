@@ -10,6 +10,7 @@
     <!-- EAL SDK root (the folder holding eal4DotNetStandard20). Set the EAL_SDK environment variable or pass
          -p:EalSdkDir=...; -p:EalBinDir=... points straight at the folder holding EAL.dll / SiP.dll. -->
     <EalSdkDir Condition="'$(EalSdkDir)' == ''">$(EAL_SDK)</EalSdkDir>
+    <EalSdkDir Condition="'$(EalSdkDir)' == '' And Exists('$(MSBuildThisFileDirectory)../eal/eal4DotNetStandard20/bin/EAL.dll')">$(MSBuildThisFileDirectory)../eal</EalSdkDir>
     <EalSdkDir Condition="'$(EalSdkDir)' == ''">/usr/local/eal_sdk/02VRS</EalSdkDir>
     <EalBinDir Condition="'$(EalBinDir)' == ''">$(EalSdkDir)/eal4DotNetStandard20/bin</EalBinDir>
   </PropertyGroup>
@@ -27,6 +28,11 @@
     <None Update="scopeConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <!-- Windows zip distribution ships native/support DLLs (libzmq, openssl, datalayer...) that must sit beside the exe. -->
+  <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <None Include="$(EalBinDir)/*.dll" Exclude="$(EalBinDir)/EAL.dll;$(EalBinDir)/SiP.dll" CopyToOutputDirectory="PreserveNewest" Link="%(Filename)%(Extension)" />
   </ItemGroup>
 
   <Target Name="CheckEalSdk" BeforeTargets="ResolveAssemblyReferences">

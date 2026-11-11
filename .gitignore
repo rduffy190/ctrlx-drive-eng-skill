@@ -6,3 +6,7 @@ __pycache__/
 references/test-drive.md
 drivetool/bin/
 drivetool/obj/
+
+# Bosch EAL SDK: vendor binaries, not redistributed. Unzip eal4DotNetStandard20_*.zip into eal/ (see README).
+eal/
+*.zip

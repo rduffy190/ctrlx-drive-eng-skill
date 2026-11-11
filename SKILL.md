@@ -13,12 +13,16 @@ T=~/.claude/skills/ctrlx-drive-eng/scripts/drivetool    # builds on first use / 
 export CTRLX_DRIVE_IP=<drive-ip>                       # or pass --ip; the test drive's address is in references/test-drive.md (local only)
 ```
 
+**Windows:** use `T=~/.claude/skills/ctrlx-drive-eng/scripts/drivetool` from Git Bash (works as is), or
+`scripts\drivetool.ps1` from PowerShell. The EAL SDK there is the `eal4DotNetStandard20_*.zip` unzipped into
+`eal/` (gitignored); see README.md.
+
 ### First use on a new machine
 The repo ships the DriveTool source but no EAL binaries, manuals or drive details. Check these before the first
 drive call:
 - **Build:** the first `$T` call builds DriveTool. If it fails, tell the user what to install and let them run it
-  (it needs sudo): `sudo apt install ./ealsdk_*.deb` (Bosch Rexroth EAL SDK; `EAL.dll not found` means it's
-  missing) and the .NET 10 SDK (`dotnet --list-sdks`). Then `dotnet build ~/.claude/skills/ctrlx-drive-eng/drivetool`.
+  (the Linux package needs sudo): `sudo apt install ./ealsdk_*.deb` on Linux, or unzip the EAL zip into `eal/` on Windows (Bosch Rexroth EAL SDK;
+  `EAL.dll not found` means it's missing) and the .NET 10 SDK (`dotnet --list-sdks`). Then `dotnet build ~/.claude/skills/ctrlx-drive-eng/drivetool`.
 - **Drive address:** if `references/test-drive.md` doesn't exist, ask the user for the drive's IP, check it with
   `$T ping --ip <ip>`, then create the file (address, network route if any, type plate from `$T status`). It is
   gitignored, so it stays on this machine.

@@ -9,11 +9,11 @@ The tooling is **DriveTool**, a .NET 10 CLI on EAL in this skill's `drivetool/` 
 directly (SiP over Ethernet), not through a ctrlX CORE. For the CORE's Data Layer, use the `ctrlx-rest` skill.
 
 ```bash
-T=~/.claude/skills/ctrlx-drive-eng/scripts/drivetool    # builds on first use / after source changes, then runs
-export CTRLX_DRIVE_IP=<drive-ip>                       # or pass --ip; the test drive's address is in references/test-drive.md (local only)
+T=<skill-dir>/scripts/drivetool     # <skill-dir> = this skill's folder; builds on first use / after source changes
+export CTRLX_DRIVE_IP=<drive-ip>      # or pass --ip; your drive's address goes in references/test-drive.md (local only)
 ```
 
-**Windows:** use `T=~/.claude/skills/ctrlx-drive-eng/scripts/drivetool` from Git Bash (works as is), or
+**Windows:** the same `T=<skill-dir>/scripts/drivetool` works from Git Bash, or use
 `scripts\drivetool.ps1` from PowerShell. The EAL SDK there is the `eal4DotNetStandard20_*.zip` unzipped into
 `eal/` (gitignored); see README.md.
 
@@ -22,7 +22,7 @@ The repo ships the DriveTool source but no EAL binaries, manuals or drive detail
 drive call:
 - **Build:** the first `$T` call builds DriveTool. If it fails, tell the user what to install and let them run it
   (the Linux package needs sudo): `sudo apt install ./ealsdk_*.deb` on Linux, or unzip the EAL zip into `eal/` on Windows (Bosch Rexroth EAL SDK;
-  `EAL.dll not found` means it's missing) and the .NET 10 SDK (`dotnet --list-sdks`). Then `dotnet build ~/.claude/skills/ctrlx-drive-eng/drivetool`.
+  `EAL.dll not found` means it's missing) and the .NET 10 SDK (`dotnet --list-sdks`). Then `dotnet build <skill-dir>/drivetool`.
 - **Drive address:** if `references/test-drive.md` doesn't exist, ask the user for the drive's IP, check it with
   `$T ping --ip <ip>`, then create the file (address, network route if any, type plate from `$T status`). It is
   gitignored, so it stays on this machine.
@@ -108,7 +108,7 @@ drive: idn, writable_in, type, unit, name; grep it, never read it whole). Look e
 Then `param write` (plan), get the OK, write with `--yes`. Take a `backup` first for anything beyond a
 trivial tweak.
 
-**Axis setup (scaling, gear, feed, travel, limits)**, done once on the test drive; details in
+**Axis setup (scaling, gear, feed, travel, limits)**, verified on the reference drive; details in
 [references/lessons-learned.md](references/lessons-learned.md):
 1. Feasibility first: load speed max = motor max (S-0-0113) ÷ gear × feed. Ask before writing an unreachable limit.
 2. **Step 1, CM** (all `A_CM`): S-0-0076/0044/0160 scaling types, S-0-0121/0122 gear, S-0-0123 feed.
@@ -133,7 +133,7 @@ restore refuses them for that reason.
 fires once the pre-trigger buffer is full), `signal` (signal/value/edge; not yet hardware-verified) or `auto`.
 `scope run` plans, then `--yes` runs it. Analyse with:
 ```bash
-python3 -I ~/.claude/skills/ctrlx-drive-eng/scripts/scope_report.py output/scope_X.json [--csv f.csv] [--png f.png]
+python3 -I <skill-dir>/scripts/scope_report.py output/scope_X.json [--csv f.csv] [--png f.png]
 ```
 It gives per-channel min/max (with time), peak-to-peak, mean, std, rms and value at trigger. Look at the PNG
 before describing a trace.
@@ -152,7 +152,7 @@ transfers reboot the drive, so take a parameter `backup` before `set`.
 Add a command to DriveTool rather than writing one-off programs:
 
 1. Look up the EAL API in the EAL SDK: `$EAL_SDK/eal4DotNetStandard20/doc/html` (API reference) and
-   `$EAL_SDK/eal4DotNetStandard20/samples` (default `EAL_SDK=/usr/local/eal_sdk/02VRS`). **Never invent EAL names.** Some documented calls throw `NotImplementedException` on ctrlX DRIVE;
+   `$EAL_SDK/eal4DotNetStandard20/samples` (`EAL_SDK` is `eal/` in this skill on Windows, `/usr/local/eal_sdk/02VRS` on Linux). **Never invent EAL names.** Some documented calls throw `NotImplementedException` on ctrlX DRIVE;
    check [references/eal-on-ctrlx-drive.md](references/eal-on-ctrlx-drive.md) first, and probe new calls
    read-only in a try/catch.
 2. More than one parameter → bulk only: `Drive.ReadBlocks` (SaveParameters to a stream) and `Drive.LoadBlocks`
@@ -174,7 +174,7 @@ files.** Start from [manuals/README.md](manuals/README.md).
 - How a function works (homing, scaling, limits, modes, scope, error reactions):
   `manuals/runtime-axs-v-06-functions/index.md`.
 - Diagnosis codes: `grep -rn 'F2174' manuals/`.
-- Test drive hardware (XCS2-W0007F): `manuals/xcs2-compact-hw/`. Other device families:
+- Compact drive hardware (XCS2, the reference drive): `manuals/xcs2-compact-hw/`. Other device families:
   `manuals/modular-drive-systems-hw/`.
 - Figures aren't in the text. Render the PDF page (`mutool draw`, see the README) and look at it.
 
@@ -187,9 +187,9 @@ documented meaning and default, not just its name.
 - [references/eal-on-ctrlx-drive.md](references/eal-on-ctrlx-drive.md): what works or throws, timings, write
   refusals, backup selections, scope quirks.
 - [references/par-format.md](references/par-format.md): SERCOS-ASCII .par layout and attribute bits.
-- `references/idn-index.tsv`: IDN → name/unit/type/writability for the test drive (FWA-XD1-AXS-V-0610N),
+- `references/idn-index.tsv`: IDN → name/unit/type/writability, read from the reference drive (FWA-XD1-AXS-V-0610N),
   regenerated after the linear rescale.
-- [references/test-drive.md](references/test-drive.md): the test drive's address, hardware and current axis setup.
+- [references/test-drive.md](references/test-drive.md): your drive's address, network route, hardware and axis setup (local only, gitignored).
 - `manuals/`: Rexroth parameter reference, runtime functions manual and two hardware manuals, as Markdown.
 - `scripts/pdf_to_md.py`: converts further Rexroth PDFs the same way.
 
@@ -198,4 +198,4 @@ read-back, PM and CM switching for writes, diff, backup (all three selections), 
 info, scope signals/stop/run (manual trigger), `command` (C0300 set absolute position), and the full axis
 setup and torque limits above.
 **Not yet run on hardware:** the `restore --yes` load, the scope signal trigger, `firmware get`/`set`, C0500
-via `command`, and discover finding a device (the test drive is routed).
+via `command`, and discover finding a device (the reference drive is routed).

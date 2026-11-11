@@ -1,15 +1,12 @@
 # ctrlx-drive-eng
 
-A Claude Code skill for engineering Bosch Rexroth ctrlX DRIVE servo drives over Ethernet with the Easy
-Automation Library (EAL). The skill instructions are in [SKILL.md](SKILL.md).
+An agent skill (`SKILL.md` format) for engineering Bosch Rexroth ctrlX DRIVE servo drives over Ethernet with the
+Easy Automation Library (EAL). The skill instructions are in [SKILL.md](SKILL.md). DriveTool, the CLI it uses,
+also works on its own.
 
 ## Install
 
-Clone into your Claude Code skills folder:
-
-```bash
-git clone https://github.com/rduffy190/ctrlx-drive-eng-skill.git ~/.claude/skills/ctrlx-drive-eng
-```
+Put this folder in the skills directory your agent loads skills from, under the folder name `ctrlx-drive-eng`.
 
 ## Requirements
 
@@ -21,18 +18,19 @@ git clone https://github.com/rduffy190/ctrlx-drive-eng-skill.git ~/.claude/skill
     (libzmq, openssl, datalayer) next to the build. `eal/` and `*.zip` are gitignored.
   - Anywhere else: set `EAL_SDK` to the folder holding `eal4DotNetStandard20`, or pass `-p:EalBinDir=...`.
 - **.NET 10 SDK** (`dotnet --list-sdks` should show 10.x).
-- **Python 3** for the scripts (Windows: `winget install Python.Python.3.12`). `scope_report.py --png` also needs matplotlib.
+- **Python 3** for the scripts (Windows: `winget install Python.Python.3.12`, then use `python` where the docs say
+  `python3`). `scope_report.py --png` also needs matplotlib.
 - **poppler-utils** (`pdftotext`) and **mupdf-tools** (`mutool`), only for converting the manuals. Without
   `mutool` (Windows), `pip install pymupdf` is used for the bookmarks; `pdftotext` is still needed.
 
 ## Build
 
-Install the SDK, then build DriveTool.
+Install the SDK, then build DriveTool from this folder.
 
 Linux:
 ```bash
 sudo apt install ./ealsdk_*.deb
-dotnet build ~/.claude/skills/ctrlx-drive-eng/drivetool
+dotnet build drivetool
 ```
 
 Windows (PowerShell, .NET 10 SDK installed, e.g. `winget install Microsoft.DotNet.SDK.10`):
@@ -41,13 +39,13 @@ Expand-Archive eal4DotNetStandard20_*.zip eal
 dotnet build drivetool
 ```
 
-If the build stops with `EAL.dll not found in …`, the `ealsdk` package isn't installed. After source changes,
-`scripts/drivetool` rebuilds DriveTool by itself before running it.
+If the build stops with `EAL.dll not found in …`, the SDK isn't where DriveTool looks (see above). After source
+changes, `scripts/drivetool` rebuilds DriveTool by itself before running it.
 
 ## Run
 
 ```bash
-T=~/.claude/skills/ctrlx-drive-eng/scripts/drivetool
+T=<skill-dir>/scripts/drivetool
 $T                           # usage and the list of commands
 $T ping --ip <drive-ip>      # check the drive answers
 export CTRLX_DRIVE_IP=<drive-ip>   # or pass --ip on every call
@@ -80,10 +78,11 @@ python3 -I scripts/pdf_to_md.py "<modular drive systems>.pdf" manuals/modular-dr
 |---|---|
 | `SKILL.md` | Skill instructions: commands, safety rules (plan → confirm → `--yes`), workflows |
 | `drivetool/` | DriveTool source: the EAL-based CLI (commands in `Commands/`, .par handling in `Par/`) |
-| `scripts/drivetool` | Wrapper that builds DriveTool on first use or after source changes, then runs it |
+| `scripts/drivetool`, `scripts/drivetool.ps1` | Wrappers (bash, PowerShell) that build DriveTool on first use or after source changes, then run it |
 | `scripts/scope_report.py` | Scope trace analysis (stats, CSV, PNG) |
 | `scripts/pdf_to_md.py` | Rexroth PDF → Markdown converter |
 | `references/` | Lessons learned, EAL behaviour on ctrlX DRIVE, .par format, IDN index |
 
-`references/test-drive.md` (your drive's address, network route and axis setup) is local only and not
-published. SKILL.md refers to it, so create your own: address, hardware, firmware, backups and axis setup.
+The values in `references/` were measured on a reference drive (ctrlX DRIVE compact XCS2-W0007F, firmware
+FWA-XD1-AXS-V-0610N). `references/test-drive.md` holds your own drive's address, network route and axis setup.
+It is local only and gitignored; SKILL.md tells the agent to create it on first use.

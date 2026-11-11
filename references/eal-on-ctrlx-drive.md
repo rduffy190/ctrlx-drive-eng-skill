@@ -46,7 +46,7 @@ ctrlX DRIVE XCS2 running FWA-XD1-AXS-V-0610N-NN-00, 2026-10-12. Library API docs
   The manual's `Class` field does tell: `A_CM` = CM only, `A_PM` = PM or CM (PDF p. 1849). Both switches
   via `IAxis.SetCondition` were verified on hardware on 2026-10-12.
 
-## Scaling changes (done on the test drive, 2026-10-12)
+## Scaling changes (verified on the reference drive, 2026-10-12)
 
 - Rotary to linear load-side mm: S-0-0076 = `0000.0000.0100.0001` (linear, preferred, metric, load, absolute) and
   S-0-0160 = `0000.0000.0100.0001` (mm/s²). Gear S-0-0121/0122 = motor revs : load revs. Feed S-0-0123 mm/rev.
@@ -62,10 +62,10 @@ ctrlX DRIVE XCS2 running FWA-XD1-AXS-V-0610N-NN-00, 2026-10-12. Library API docs
 - Change scaling first and limits second, as separate writes. Limit values are interpreted in the units
   active at write time.
 
-## Torque limits (set on the test drive, 2026-10-12)
+## Torque limits (verified on the reference drive, 2026-10-12)
 
 - Percentage scaling (S-0-0086 = 0): 100 % = S-0-0533, the nominal motor torque (MS2: from encoder memory;
-  test motor 0.230 Nm). Reference: parameter reference p. 1076.
+  0.230 Nm on the reference drive's motor). Reference: parameter reference p. 1076.
 - Process limits S-0-0092 (bipolar), S-0-0082 (+) and S-0-0083 (−) are writable in OM (no mode switch).
   "Unlimited" reads 3276.7 / −3276.8 %, and the drive caps them at 343.5 % (≈ S-0-0109 peak current ÷
   S-0-0111 rated current). Verify through P-0-0444 (effective) and P-0-0442/0443.
@@ -85,7 +85,7 @@ round-trips; A0011 "STO aktiv" (Safe Torque Off) doesn't block C0300.
   Restoring an All file would write them back, so DriveTool refuses that unless `--allow-non-backup` is given.
 - `Backup` is the restorable set. It diffs to zero against the drive it came from, and it's DriveTool's default.
   It includes S-0-0192 (516 IDNs) plus ~11 more.
-- `Modified` is the parameters changed from defaults (95 on the test drive).
+- `Modified` is the parameters changed from defaults (95 on the reference drive).
 
 ## Scope
 
@@ -100,6 +100,6 @@ round-trips; A0011 "STO aktiv" (Safe Torque Off) doesn't block C0300.
 
 ## Discovery
 
-`BrowseDevices` is SiP broadcast on a local subnet. A drive behind a router (such as the test drive, reached through
+`BrowseDevices` is SiP broadcast on a local subnet. A drive behind a router (one reached through
 a host route; see references/test-drive.md) **isn't found** by `discover`; use `ping`/`status`
 with its IP instead.

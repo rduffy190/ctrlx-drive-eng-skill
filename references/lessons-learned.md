@@ -1,7 +1,7 @@
 # Lessons learned: failures and their causes
 
 Each entry gives the symptom, the cause, the fix and the source. Grep here first when a drive write or a tool
-step fails. All entries are from the XCS2 test drive (FWA-XD1-AXS-V-0610N) on 2026-10-12, unless noted.
+step fails. All entries are from the reference drive (XCS2, FWA-XD1-AXS-V-0610N) on 2026-10-12, unless noted.
 
 ## Writing parameters
 
@@ -41,7 +41,7 @@ step fails. All entries are from the XCS2 test drive (FWA-XD1-AXS-V-0610N) on 20
 
 ### Position meaning changes after rescaling
 - Changing scaling, gear or feed re-interprets the actual position (12853° became 1089.2574 mm). The axis needs
-  homing / set absolute position afterwards. The test drive also had F2174 (encoder 1 reference lost),
+  homing / set absolute position afterwards. The reference drive also had F2174 (encoder 1 reference lost),
   documented in runtime manual chapter "Establishing the position data reference".
 
 ### Scope parameters refused
@@ -84,6 +84,7 @@ step fails. All entries are from the XCS2 test drive (FWA-XD1-AXS-V-0610N) on 20
   `GetVersionInfo` and `GetServerCoreVersion` throw. See [eal-on-ctrlx-drive.md](eal-on-ctrlx-drive.md).
 
 ### Drive unreachable
-- The test drive needs a host route:
-  `sudo ip route add <drive-ip>/32 via <gateway> dev <iface>` (actual values in references/test-drive.md). It's lost on reboot; the user must run it,
-  since sudo is denied in this project. `discover` never finds it (routed, not broadcast-reachable).
+- A drive on another subnet needs a host route: `sudo ip route add <drive-ip>/32 via <gateway> dev <iface>` on
+  Linux, or `route add <drive-ip> mask 255.255.255.255 <gateway>` in an admin shell on Windows (keep the values in
+  references/test-drive.md). It's lost on reboot, and it needs admin rights, so ask the user to run it.
+  `discover` never finds a routed drive (not broadcast-reachable).
